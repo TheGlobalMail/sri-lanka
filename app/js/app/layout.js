@@ -1,6 +1,7 @@
 define([
-  'jquery'
-], function($) {
+  'jquery',
+  'events'
+], function($, events) {
 
   var scaleToViewport = function() {
     $('.article-header').height(window.innerHeight);
@@ -8,6 +9,8 @@ define([
 
   var init = function() {
     scaleToViewport();
+
+    events.trigger('layout:complete');
   };
 
   return {
