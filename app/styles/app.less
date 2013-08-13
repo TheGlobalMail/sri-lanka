@@ -25,17 +25,19 @@ section {
 .article-header {
   .scale-to-viewport();
   max-width: 100%;
-  background: url('/images/6.jpg') center center no-repeat;
+  background: url('/images/soldier-silhouetted.jpg') center center no-repeat;
   background-size: cover;
+  // IE8 polyfill for `background-size: cover;`
+  // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path_relative_to_the_HTML_file', sizingMethod='scale')";
   margin-bottom: 10em;
   h1 {
     position: absolute;
-    bottom: 10%;
-    left: 10%;
+    top: 40%;
     text-align: center;
     z-index: 2;
-    color: white;
-    font-size: 20em;
+    color: rgba(255,255,255,0.8);
+    font-size: 10em;
+    width: 100%;
   }
   img {
     .scale-to-parent();
