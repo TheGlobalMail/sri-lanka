@@ -82,8 +82,8 @@ module.exports = function(grunt) {
         files: [
           '<%= project.app %>/index.html',
           '{.tmp,<%= project.app %>}/styles/{,/*}*.css',
-          '{.tmp,<%= project.app %>}/js/{,/*,**/,*/}*.js',
-          '<%= project.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
+          '{.tmp,<%= project.app %>}/js/{,/*,**/,*/,**/**/}*.js',
+          '<%= project.app %>/images/{,*/}*.{png,jpg,jpeg,webp,svg}'
         ],
         tasks: ['livereload']
       }
@@ -181,6 +181,21 @@ module.exports = function(grunt) {
       }
     },
 
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: "app/js",
+          mainConfigFile: "app/js/main.js",
+          include: ["main"],
+          out: "dist/js/main.js",
+          optimize: "none",
+          preserveLicenseComments: false,
+          useStrict: true,
+          wrap: true
+        }
+      }
+    },
+
     // useminPrepare scans files for <!-- build:(js|css) --> blocks
     // and injects config into the grunt-contrib-concat task
     useminPrepare: {
@@ -230,7 +245,10 @@ module.exports = function(grunt) {
         length: 16
       },
       files: {
-        src: ['<%= project.dist %>/js/*.js', '<%= project.dist %>/styles/*.css'],
+        src: [
+          '<%= project.dist %>/js/*.js',
+          '<%= project.dist %>/styles/*.css'
+        ]
       }
     },
 
@@ -247,9 +265,19 @@ module.exports = function(grunt) {
           src: [
             'index.html',
             '*.{ico,txt}',
-            '.htaccess'
+            '.htaccess',
+            'images/*'
           ]
         }]
+      }
+    },
+
+    bower: {
+      options: {
+        exclude: ['modernizr']
+      },
+      all: {
+        rjsConfig: '<%= yeoman.app %>/js/main.js'
       }
     },
 
@@ -344,28 +372,27 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', function(target) {
     // Build and deploy
 
-    var tasks = [
-      'build'
-    ];
-
     if (process.env['RACKSPACE_API_KEY'] === undefined) {
       throw new TypeError('Specify the `RACKSPACE_API_KEY` property in local_config.json');
     }
 
     // Deploy targets
     var targetToTask = {
-      'production': 'cloudfiles:dist',
-      'staging': 'cloudfiles:staging'
+      'production': [
+        'build',
+        'cloudfiles:dist'
+      ],
+      'staging': [
+        'build:staging',
+        'cloudfiles:staging'
+      ]
     };
 
     if (targetToTask[target] === undefined) {
       throw new TypeError('Select a target destination from: ' + _(targetToTask).keys().join(', '));
     }
 
-    tasks = tasks.concat([
-      targetToTask[target],
-      'clean:dist'
-    ]);
+    var tasks = targetToTask[target].concat('clean:dist');
 
     grunt.task.run(tasks);
   });
