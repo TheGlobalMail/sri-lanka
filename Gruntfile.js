@@ -263,7 +263,7 @@ module.exports = function(grunt) {
           cwd: '<%= project.app %>',
           dest: '<%= project.dist %>',
           src: [
-            'index.html',
+            '*.html',
             '*.{ico,txt}',
             '.htaccess',
             'images/*'
@@ -379,21 +379,26 @@ module.exports = function(grunt) {
 
     // Deploy targets
     var targetToTask = {
-      'production': [
-        'build',
+      production: [
+        'build:production',
         'cloudfiles:dist'
       ],
-      'staging': [
+      staging: [
         'build:staging',
         'cloudfiles:staging'
       ]
     };
 
-    if (targetToTask[target] === undefined) {
-      throw new TypeError('Select a target destination from: ' + _(targetToTask).keys().join(', '));
+    var tasks = targetToTask[target];
+
+    if (tasks === undefined) {
+      throw new Error(
+        'Select a target destination from: ' +
+        _.keys(targetToTask).join(', ')
+      );
     }
 
-    var tasks = targetToTask[target].concat('clean:dist');
+    tasks.push('clean:dist');
 
     grunt.task.run(tasks);
   });
