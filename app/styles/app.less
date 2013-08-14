@@ -28,12 +28,6 @@ body {
   margin-top: 48px;
 }
 
-section {
-  .font-size(@parFontSize);
-  max-width: 30em;
-  margin: 0 auto;
-}
-
 .article-header {
   .scale-to-viewport();
   max-width: 100%;
@@ -113,9 +107,13 @@ section {
   }
 }
 
+@contentParaWidth: 30em;
 .content {
-  margin-top: 2em;
+  margin-top: 10em;
+  .font-size(@parFontSize);
   p {
+    max-width: @contentParaWidth;
+    margin: 0 auto;
     font-family: @serifFontFamily;
     .font-size(@parFontSize);
     word-wrap: break-word;
@@ -137,11 +135,39 @@ section {
       text-indent: -5px;
     }
   }
+  .pull-quote {
+    max-width: @contentParaWidth;
+    margin: 0 auto;
+    border: 0;
+    padding: 0;
+    &.pull-right,
+    &.pull-left {
+      margin-left: 1em;
+      margin-right: 1em;
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &.text {
+      font-size: 2em;
+      max-width: @contentParaWidth / 1.5;
+      margin: 2em auto;
+    }
+    &.large-image {
+      max-width: @contentParaWidth * 1.75;
+    }
+    p {
+      max-width: 100%;
+      font-size: 0.75em;
+      line-height: 1.5;
+    }
+  }
 }
 
 .next-chapter {
-  margin-top: 4em;
-  margin-bottom: 3em;
+  max-width: @contentParaWidth;
+  margin: 4em auto 3em auto;
+  .font-size(@parFontSize);
   .call-to-action {
     display: block;
     width: 100%;
