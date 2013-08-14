@@ -1,0 +1,34 @@
+// Reused Mixins
+.animation (...) {
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  -o-animation: @arguments;
+  animation: @arguments;
+}
+
+.translate(@string){
+  -webkit-translate: @string;
+  -moz-translate: @string;
+  -ms-translate: @string;
+  -o-translate: @string;
+}
+
+.transform(@string){
+  -webkit-transform: @string;
+  -moz-transform: @string;
+  -ms-transform: @string;
+  -o-transform: @string;
+}
+
+.scale-to-viewport {
+  position: relative;
+  height: 100vh;
+}
+
+.scale-to-parent {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+}
