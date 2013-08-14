@@ -12,6 +12,7 @@ section {
 
 .scale-to-viewport {
   position: relative;
+  height: 100vh;
 }
 
 .scale-to-parent {
@@ -29,14 +30,31 @@ section {
   background-size: cover;
   // IE8 polyfill for `background-size: cover;`
   // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path_relative_to_the_HTML_file', sizingMethod='scale')";
-  margin-bottom: 10em;
   h1 {
     position: absolute;
-    top: 40%;
+    top: 20%;
     text-align: center;
     z-index: 2;
     color: rgba(255,255,255,0.8);
     font-size: 10em;
+    width: 100%;
+  }
+  h2 {
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    z-index: 2;
+    color: rgba(200,200,200,0.7);
+    font-size: 4.8em;
+    width: 100%;
+  }
+  h3 {
+    position: absolute;
+    bottom: 20%;
+    text-align: center;
+    z-index: 2;
+    color: rgba(200,200,200,0.8);
+    font-size: 3em;
     width: 100%;
   }
   img {
@@ -45,26 +63,79 @@ section {
   }
 }
 
-p {
-  font-family: @serifFontFamily;
-  .font-size(@parFontSize);
-  line-height: 1.5;
-  word-wrap: break-word;
-  padding-left: 20px;
-  padding-right: 20px;
-  &:first-of-type {
-    font-weight: bold;
-    line-height: 1.4;
-    &:first-letter {
-      font-size: 710%;
-      float: left;
-      line-height: .73;
-      margin: 14px 0 -14px -20px;
-      text-indent: -5px;
+.chapters {
+  max-width: none;
+  padding: 2em 1.5em;
+  margin: 0 auto;
+  height: 200px;
+  background-color: rgba(0,0,0,0.1);
+  .chapter {
+    width: 20%;
+    height: 100%;
+    float: left;
+    margin-right: 6%;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+    }
+    .image {
+      background-image: url('/images/6.jpg');
+      background-size: cover;
+      height: 80%;
+    }
+    .title {
+      display: inline-block;
+      margin-top: 0.3em;
+      font-weight: 600;
+    }
+    .overlay-anchor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &.bad-monks .image {
+      background-image: url('/images/srilanka068.jpg');
     }
   }
-  &:last-child {
-    margin-bottom: 40px;
+}
+
+.content {
+  margin-top: 2em;
+  p {
+    font-family: @serifFontFamily;
+    .font-size(@parFontSize);
+    line-height: 1.5;
+    word-wrap: break-word;
+    padding-left: 20px;
+    padding-right: 20px;
+    &:first-of-type {
+      font-weight: bold;
+      line-height: 1.4;
+      &:first-letter {
+        font-size: 710%;
+        float: left;
+        line-height: .73;
+        margin: 14px 0 -14px -20px;
+        text-indent: -5px;
+      }
+    }
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.next-chapter {
+  margin-top: 5em;
+  margin-bottom: 3em;
+  .call-to-action {
+    display: block;
+    width: 100%;
+    text-align: right;
+    color: #000;
+    font-weight: 600;
   }
 }
 
