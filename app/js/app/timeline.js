@@ -1,0 +1,27 @@
+define([
+  'jquery',
+  'timelinejs'
+], function($, timelinejs, events) {
+
+  var timelineConfig = function () {
+    createStoryJS({
+      type:       'timeline',
+      width:      '800',
+      height:     '600',
+      source:     './js/app/timeline.json',
+      embed_id:   'timeline',
+      font:       './styles/timeline/MetaFont.css',
+      css:        './styles/timeline/timeline.css',
+      js:         './components/timelinejs/compiled/js/timeline-min.js'
+    });
+  }
+
+
+  var init = function() {
+    timelineConfig();
+  };
+
+  return {
+    init: init
+  };
+});
