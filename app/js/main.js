@@ -9,7 +9,8 @@ require.config({
     easing: '../components/jquery-easing/jquery.easing',
     timelinejs: '../components/timelinejs/compiled/js/storyjs-embed',
     handlebars: '../components/handlebars/handlebars',
-    text: '../components/requirejs-text/text'
+    text: '../components/requirejs-text/text',
+    json: '../components/requirejs-plugins/src/json'
   },
   shim: {
     scrollTo: {
