@@ -7,7 +7,9 @@ require.config({
     fatcontroller: './libs/fatcontroller',
     scrollTo: '../components/jquery.scrollTo/jquery.scrollTo',
     easing: '../components/jquery-easing/jquery.easing',
-    timelinejs: '../components/timelinejs/compiled/js/storyjs-embed'
+    timelinejs: '../components/timelinejs/compiled/js/storyjs-embed',
+    handlebars: '../components/handlebars/handlebars',
+    text: '../components/requirejs-text/text'
   },
   shim: {
     scrollTo: {
@@ -15,6 +17,9 @@ require.config({
     },
     timelinejs: {
       deps: ['jquery']
+    },
+    handlebars: {
+      exports: 'Handlebars'
     }
   }
 });
@@ -24,7 +29,7 @@ require([
   'events',
   'config',
   './app/main',
-  'timelinejs',
+  'timelinejs'
 ],
 function($, events, config, app, timelinejs) {
   if (config.debugEvents) {

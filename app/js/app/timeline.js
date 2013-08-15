@@ -3,7 +3,7 @@ define([
   'timelinejs'
 ], function($, timelinejs, events) {
 
-  var timelineConfig = function () {
+  var timelineConfig = function() {
     createStoryJS({
       type:       'timeline',
       width:      '100%',
@@ -14,11 +14,12 @@ define([
       css:        './styles/timeline/timeline.css',
       js:         './components/timelinejs/compiled/js/timeline-min.js'
     });
-  }
-
+  };
 
   var init = function() {
-    timelineConfig();
+    if ($('#timeline').length) {
+      timelineConfig();
+    }
   };
 
   return {

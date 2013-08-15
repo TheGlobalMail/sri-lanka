@@ -1,8 +1,9 @@
 define([
   'events',
   './layout',
-  './timeline'
-], function(events, layout, timeline) {
+  './timeline',
+  './templates'
+], function(events, layout, timeline, templates) {
   'use strict';
 
   var body;
@@ -22,6 +23,7 @@ define([
 
     layout.init();
     timeline.init();
+    templates.init();
   };
 
   return {
