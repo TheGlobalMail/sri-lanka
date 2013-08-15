@@ -1,0 +1,231 @@
+{
+    "timeline":
+    {
+        "headline": "Sri Lankan History",
+        "type": "default",
+            "text": "History since independence.",
+            "startDate": "1945",
+            "date": [
+                {
+                    "startDate" : "1948",
+                    "endDate" : null,
+                    "text" : "Ceylon (as Sri Lanka was then called) attains independence from Britain. ",
+                    "asset" : {
+                        "media" : "./images/timeline/102247923.jpg",
+                        "credit" : "AFP/Getty Images",
+                        "caption" : "The ceremonial opening 10 February 1948 of Sri Lanka's first parliament six days after independence from Britain."
+                    },
+                    "headline" : "Ceylon attains independence"
+                },
+                {
+                    "startDate" : "1956",
+                    "endDate" : null,
+                    "text" : "Solomon Bandaranaike\u2019s populist Sri Lanka Freedom Party wins government after campaigning on a majoritarian Sinhalese Buddhist ticket.  ",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Sri Lanka Freedom Party wins government"
+                },
+                {
+                    "startDate" : "1956",
+                    "endDate" : null,
+                    "text" : "The \u2018Sinhala Only\u2019 Act is passed. It denies recognition to the Tamil language, spoken at the time by around 25 per cent of the island\u2019s population.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "The cotroversial 'Sinhala Only' Act is passed"
+                },
+                {
+                    "startDate" : "1958",
+                    "endDate" : null,
+                    "text" : "Race riots between Sinhalese and Tamils leave 300 people dead.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Race riots leave hundreds dead"
+                },
+                {
+                    "startDate" : "1970",
+                    "endDate" : null,
+                    "text" : "The importation of Tamil-language literature is banned by the government.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Tamil-language literature is banned by the government"
+                },
+                {
+                    "startDate" : "1971",
+                    "endDate" : null,
+                    "text" : " An official \u2018Standardisation\u2019 education quota policy is introduced, which limits Tamil access to universities. A Marxist rebellion begins among the southern Sinhalese community.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Standardisation' education quota policy is introduced."
+                },
+                {
+                    "startDate" : "1975",
+                    "endDate" : null,
+                    "text" : "The pro-Colombo mayor of the northern city of Jaffna, Alfred Duraiappah, is assassinated by Tamil militia member Vellupillai Prabhakaran.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Major of Jaffna, Alfred Duraiappah, is assassinated"
+                },
+                {
+                    "startDate" : "1976",
+                    "endDate" : null,
+                    "text" : "The separatist militia, Liberation Tigers of Tamil Eelam, or Tamil Tigers, is formed, and demands a separate state in the mostly Tamil north-east. It calls this zone Eelam, evoking the ancient Tamil name for the island. Prabhakaran is the LTTE\u2019s military commander.",
+                    "asset" : {
+                        "media" : "./images/timeline/2765082.jpg",
+                        "credit" : "STR/AFP/Getty Images",
+                        "caption" : "KILINOCHCHI, SRI LANKA: Liberation Tigers of Tamil Eelam (LTTE) supremo Velupillai Prabhakaran stands next to the LTTE flag during his annual Heroes' Week address to his people from the Northern Sri Lankan town of Kilinochchi, 27 November 2003."
+                    },
+                    "headline" : "The Liberation Tigers of Tamil Eelam (LTTE), a seperatist militia, is formed"
+                },
+                {
+                    "startDate" : "1981",
+                    "endDate" : null,
+                    "text" : "The historic Jaffna library is razed in a fire set by a Sinhalese mob after Sinhalese police were killed at a pro-Tamil rally.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Jaffna library is burnt down"
+                },
+                {
+                    "startDate" : "1983",
+                    "endDate" : null,
+                    "text" : "LTTE rebels kill 13 government soldiers in an ambush. The island-wide \u2018Black July\u2019 anti-Tamil attacks follow \u2013 a pogrom that leaves some 3,000 people dead and forces hundreds of thousands of Tamils to flee abroad. The Sri Lankan civil war begins.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Black July and Civil War begins"
+                },
+                {
+                    "startDate" : "1987",
+                    "endDate" : null,
+                    "text" : "Indian troops begin \u2018peace-keeping\u2019 operations in the north-east, which quickly descend into a war against the LTTE that rages until 1990 when India withdraws. The 13th Amendment to the Sri Lankan constitution enshrines Tamil as an official language. The Marxist-Leninist People\u2019s Liberation Front begins another insurrection in the Sinhalese south, starting a civil war within a civil war.",
+                    "asset" : {
+                        "media" : "./images/timeline/52017509.jpg",
+                        "credit" : "DOUGLAS E. CURRAN/AFP/Getty Images",
+                        "caption" : "ELEPHANT PASS, SRI LANKA - OCTOBER 15: A convoy of Indian troops moves towards Jaffna town 15 October 1987 from Elephant Pass, 25 miles (40 km) south of the rebel bastion under siege by Indian peace keeping forces."
+                    },
+                    "headline" : "Indian troops begin 'peacekeeping' in the north-east, fueling another war against the LTTE. The 13th Amendment to the Sri Lankan constitution makes Tamil an official language"
+                },
+                {
+                    "startDate" : "1991",
+                    "endDate" : null,
+                    "text" : "Indian Prime Minister Rajiv Gandhi is assassinated by an LTTE suicide bomber in Madras/Chennai, in revenge for India\u2019s incursion into the Sri Lankan conflict.",
+                    "asset" : {
+                        "media" : "./images/timeline/52013752.jpg",
+                        "credit" : "DOUGLAS E. CURRAN/AFP/Getty Images",
+                        "caption" : "NEW DELHI, INDIA - MAY 24: photo dated 24 May 1991 of funeral procession for assassinated former Indian Prime Minister Rajiv Gandhi departing from Teen Murti Bhavan in the Indian capital."
+                    },
+                    "headline" : "Indian PM is assassinated by an LTTE sucide bomber"
+                },
+                {
+                    "startDate" : "1993",
+                    "endDate" : null,
+                    "text" : "Sri Lankan President Ranasinghe Premadasa is assassinated by an LTTE suicide bomber in Colombo.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Sri Lankan President is assassinated by an LTTE sucide bomber"
+                },
+                {
+                    "startDate" : "1995",
+                    "endDate" : null,
+                    "text" : "The Tamil \u2018capital\u2019 Jaffna falls to government forces. The LTTE retreats south to secure the Vanni region, eventually setting up its Eelam \u2018capital\u2019 in the town of Kilinochchi.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Tamil capital falls to government forces"
+                },
+                {
+                    "startDate" : "2001",
+                    "endDate" : null,
+                    "text" : " Al-Qaeda\u2019s attacks in the US trigger America\u2019s War on Terror. The Eelam Tigers, who crave international recognition, start making peace overtures. ",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "LTTE start making peace overtures"
+                },
+                {
+                    "startDate" : "2001",
+                    "endDate" : null,
+                    "text" : "John Howard\u2019s Coalition Government wins the Australian federal election in which it promises a \u201cPacific Solution\u201d to stop asylum seekers coming to Australia by boat from neighbouring countries, including Sri Lanka.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "John Howard's Pacific Solution promises to stop asylum seekers coming by boat, including Sri Lanka."
+                },
+                {
+                    "startDate" : "2001",
+                    "endDate" : "2002",
+                    "text" : "As part of a Norwegian-sponsored peace process, a ceasefire is negotiated between Colombo and the LTTE. The Tigers drop demands for a separate Tamil state and the two sides pursue federalist discussions.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Ceasefire negotiated"
+                },
+                {
+                    "startDate" : "2004",
+                    "endDate" : null,
+                    "text" : "The LTTE\u2019s eastern commander Colonel Karuna breaks with the LTTE, splitting the weakened movement in two. The Boxing Day tsunami devastates the island, killing 35,000 people. Disputes simmer between the Tigers and the government over international aid.",
+                    "asset" : {
+                        "media" : "./images/timeline/52065976.jpg",
+                        "credit" : "PRAKASH SINGH/AFP/Getty Images",
+                        "caption" : "GALLE, SRI LANKA: Sri Lankans stand amongst earthenware lamps which spell 'Tsunami 2004' in sinhalese at Unawatuna Beach in Galle, some 123 km south of Colombo, 26 January 2005."
+                    },
+                    "headline" : "Boxing Day Tsumani kills 35, 000 people"
+                },
+                {
+                    "startDate" : "2004",
+                    "endDate" : null,
+                    "text" : "The devastating tsunami gives Colombo access to aid-starved Eelam.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Colombo given access to aid-starved Eelam"
+                },
+                {
+                    "startDate" : "2005",
+                    "endDate" : null,
+                    "text" : "Scandinavian peace monitors report thousands of treaty violations by both sides. Mahinda Rajapaksa campaigns for the presidency on a tough anti-LTTE ticket. The Tigers boycott the poll, effectively handing power to Rajapaksa.",
+                    "asset" : {
+                        "media" : null,
+                        "credit" : null,
+                        "caption" : null
+                    },
+                    "headline" : "Mahinda Rajapaksa wins presidency"
+                }
+            ]
+    }
+}
