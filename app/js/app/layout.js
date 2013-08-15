@@ -4,7 +4,7 @@ define([
 ], function($, events) {
 
   var scaleToViewport = function() {
-    $('.article-header').height(window.innerHeight);
+//    $('.article-header').height(window.innerHeight);
   };
 
   var init = function() {
