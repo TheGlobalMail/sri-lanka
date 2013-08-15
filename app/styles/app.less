@@ -29,43 +29,36 @@ body {
 }
 
 .article-header {
-  .scale-to-viewport();
+  position: relative;
+  padding: 2em;
+//  height: 100vh;
   max-width: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // IE8 polyfill for `background-size: cover;`
-  // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path_relative_to_the_HTML_file', sizingMethod='scale')";
-  h1 {
-    position: absolute;
-    top: 20%;
-    text-align: center;
-    z-index: 2;
-    color: rgba(255,255,255,0.8);
+  .header,
+  .byline,
+  .author {
+    color: #333;
+  }
+  .header {
     font-size: 10em;
-    width: 100%;
   }
-  h2 {
-    position: absolute;
-    top: 30%;
-    text-align: center;
-    z-index: 2;
-    color: rgba(200,200,200,0.7);
-    font-size: 4.8em;
-    width: 100%;
-  }
-  h3 {
-    position: absolute;
-    bottom: 20%;
-    text-align: center;
-    z-index: 2;
-    color: rgba(200,200,200,0.8);
+  .byline {
     font-size: 3em;
-    width: 100%;
+    margin-bottom: 1em;
   }
-  img {
-    .scale-to-parent();
-    z-index: 0;
+  .author {
+    font-size: 3em;
+    margin-top: 1em;
+  }
+  .image {
+    height: 60vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // IE8 polyfill for `background-size: cover;`
+    // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path_relative_to_the_HTML_file', sizingMethod='scale')";
   }
 }
 
@@ -113,7 +106,6 @@ body {
   position: relative;
   z-index: 10;
   .font-size(@parFontSize);
-  background: black;
   p {
     max-width: @contentParaWidth;
     margin: 0 auto;
@@ -123,10 +115,6 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 1.4em;
-    color: #eee;
-//    &:first-child {
-////      margin-top: -7em;
-//    }
     &:last-child {
       padding-bottom: 1.4em;
     }
@@ -192,12 +180,53 @@ body {
 article {
   &.introduction {
     .article-header {
-      background-image: url('/images/soldier-silhouetted.jpg');
+      height: 70vh;
+      padding: 0;
+      .header,
+      .byline,
+      .author,
+      .image {
+        position: absolute;
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+      }
+      .header {
+        top: 10%;
+        color: rgba(255,255,255,0.8);
+        font-size: 10em;
+      }
+      .byline {
+        top: 30%;
+        color: rgba(200,200,200,0.7);
+        font-size: 4.8em;
+      }
+      .author {
+        bottom: 20%;
+        color: rgba(200,200,200,0.8);
+        font-size: 3em;
+      }
+      .image {
+        height: 100%;
+        z-index: 1;
+        background-image: url('/images/soldier-silhouetted.jpg');
+      }
+    }
+    .content {
+      background-color: black;
+      p {
+        color: #eee;
+        &:last-child {
+          padding-bottom: 1.4em;
+        }
+      }
     }
   }
   &.bad-monks {
     .article-header {
-      background-image: url('/images/srilanka068.jpg');
+      .image {
+        background-image: url('/images/srilanka068.jpg');
+      }
     }
   }
 }
