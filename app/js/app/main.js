@@ -1,7 +1,8 @@
 define([
   'events',
-  './layout'
-], function(events, layout) {
+  './layout',
+  './timeline'
+], function(events, layout, timeline) {
   'use strict';
 
   var body;
@@ -20,6 +21,7 @@ define([
     setBindings();
 
     layout.init();
+    timeline.init();
   };
 
   return {
