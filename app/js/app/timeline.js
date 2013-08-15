@@ -6,9 +6,9 @@ define([
   var timelineConfig = function () {
     createStoryJS({
       type:       'timeline',
-      width:      '800',
-      height:     '600',
-      source:     './js/app/timeline.json',
+      width:      '100%',
+      height:     '800',
+      source:     './data/timeline.json',
       embed_id:   'timeline',
       font:       './styles/timeline/MetaFont.css',
       css:        './styles/timeline/timeline.css',
