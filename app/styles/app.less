@@ -25,7 +25,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 500; // gotta be this high to get over the timeline
   width: 100%;
   padding: 8px 0px;
   .transform(translateZ(0));
@@ -68,7 +68,7 @@ body {
   width: 100%;
   height: @articleNavHeight;
   top: @navbarHeight - @articleNavHeight;
-  z-index: 3;
+  z-index: 500; // gotta be this high to get over the timeline
   .transform(translateZ(0));
   .transition(top 0.5s ease-in-out);
   background-color: #1b1b1b;
