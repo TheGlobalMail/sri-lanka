@@ -35,62 +35,64 @@ body {
       left: 0;
     }
   }
+}
 
-  .article-title {
-    width: auto;
-    margin: 0 auto;
-    position: relative;
-    color: #eee;
-    h4 {
-        font-family: @serifFontFamily;
-        font-weight: 400;
-    }
-    cursor: pointer;
+.article-title {
+  width: 400px;
+  line-height: 32px;
+  margin: 0 auto;
+  position: relative;
+  color: #eee;
+  font-family: @serifFontFamily;
+  font-weight: 400;
+}
+
+.article-navs {
+  @articleNavHeight: 200px;
+  @navbarHeight: 48px;
+  position: fixed;
+  height: @articleNavHeight;
+  top: @navbarHeight - @articleNavHeight;
+  background-color: #1b1b1b;
+  width: 100%;
+  text-align: left;
+  color: #eee;
+  margin: 0 auto;
+  .transition(top 0.5s ease-in-out);
+  z-index: 3;
+  &.visible {
+    top: @navbarHeight;
   }
-
-  .article-navs {
-    height: 0;
-    display: none;
-    position: fixed;
-    top: 32;
-    background-color: #1b1b1b;
+  .nav {
     width: 100%;
-    text-align: left;
-    color: #eee;
-    margin:0 auto;
-    h4 {
-      font-family: @serifFontFamily;
-      font-weight: normal;
-    }
-    ul.nav {
-      width: 100%;
-      margin-top: 12px;
-      li.article-nav {
-        width: 20%;
-        margin-left: 5%;
-        height: 100%;
-        position: relative;
-        .article-nav-title {
-          font-family: @serifFontFamily;
-        }
-        .article-nav-subtitle {
-          font-family: @serifFontFamily;
-        }
-        .image {
-          background-image: url('/images/6.jpg');
-          background-size: cover;
-          width: 70%;
-          height: 120px;
-        }
-        .overlay-anchor {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
+    margin-top: 12px;
+  }
+  .article-nav {
+    width: 20%;
+    margin-left: 5%;
+    height: 100%;
+    position: relative;
+    float: left;
+  }
+  .article-nav-title {
+    font-family: @serifFontFamily;
+    font-size: 2em;
+  }
+  .article-nav-subtitle {
+    font-family: @serifFontFamily;
+  }
+  .image {
+    background-image: url('/images/6.jpg');
+    background-size: cover;
+    width: 70%;
+    height: 120px;
+  }
+  .overlay-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 

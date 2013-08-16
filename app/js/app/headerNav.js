@@ -2,19 +2,27 @@ define([
   'jquery'
 ], function($) {
 
-  var articleNav = function() {
-    $('.article-title').mouseenter(function() {
-      $('.article-navs').show().animate({'height': '200px'});
+  var articleTitle;
+  var articleNav;
+  var main;
+
+  var setBindings = function() {
+    articleTitle.on('mouseover', function() {
+      articleNav.addClass('visible');
+      main.one('mouseover', function() {
+        articleNav.removeClass('visible');
+      })
     });
-    $('.article-navs').mouseleave(function() {
-      $('.article-navs').animate({'height': '0'}, function () {
-        $(this).hide()
-      });
+    articleTitle.on('click', function() {
+      articleNav.toggleClass('visible');
     });
   };
 
   var init = function() {
-    articleNav();
+    articleTitle = $('.article-title');
+    articleNav = $('.article-navs');
+    main = $('#main');
+    setBindings();
   };
 
   return {
