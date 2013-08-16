@@ -1,8 +1,9 @@
 define([
   'jquery',
   'handlebars',
-  'require'
-], function(jquery, handlebars, require) {
+  'require',
+  'events'
+], function(jquery, handlebars, require, events) {
 
   var templateDir = location.pathname.split('/')[1];
   if (templateDir === '') {
@@ -47,6 +48,7 @@ define([
   var insertContent = function() {
     require([getTextFile('content.html')], function(text) {
       content.append(text);
+      events.trigger('template:loaded');
     })
   };
 
