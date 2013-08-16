@@ -29,10 +29,9 @@ require([
   'jquery',
   'events',
   'config',
-  './app/main',
-  'timelinejs'
+  './app/main'
 ],
-function($, events, config, app, timelinejs) {
+function($, events, config, app) {
   if (config.debugEvents) {
     window.fc = events;
   }

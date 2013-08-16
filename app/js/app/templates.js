@@ -10,9 +10,11 @@ define([
   }
 
   var header;
+  var stickyHeader;
   var byline;
   var author;
   var image;
+
   var article;
   var content;
 
@@ -31,6 +33,8 @@ define([
   var insertData = function() {
     require([getJSONFile('data.json')], function(data) {
       header.html(data.header);
+      console.log(stickyHeader[0], data.articleTitle)
+      stickyHeader.html(data.articleTitle);
       byline.html(data.byline);
       author.html(data.author);
       image.css({
@@ -51,6 +55,8 @@ define([
   };
 
   var init = function() {
+    stickyHeader = $('.navbar .article-title');
+
     var articleHeader = $('.article-header');
     header = articleHeader.find('.header');
     byline = articleHeader.find('.byline');

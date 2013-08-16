@@ -266,7 +266,8 @@ module.exports = function(grunt) {
             '*.html',
             '*.{ico,txt}',
             '.htaccess',
-            'images/*'
+            'images/*',
+            'templates/**'
           ]
         }]
       }
