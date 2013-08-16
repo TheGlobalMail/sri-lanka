@@ -15,10 +15,10 @@ define([
     return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   };
 
-  var watchElement = function(element, identifier) {
+  var observe = function(element, bindings) {
     var obj = {
       element: element,
-      eventIdentifier: identifier
+      bindings: bindings
     };
     obj = _initElement(obj);
     elementsToWatch.push(obj);
@@ -43,36 +43,62 @@ define([
     _.map(elementsToWatch, _initElement);
   };
 
-  var offsetInViewport = function(offset, resetScrollY) {
-    if (resetScrollY) {
-      scrollY = getScrollY();
+  var offsetFromViewport = function(offset) {
+    var position = {
+      in: false,
+      out: false,
+      above: false,
+      below: false
+    };
+
+    var windowTop = scrollY;
+    var windowBottom = scrollY + windowHeight;
+    var elementTop = offset.top;
+    var elementBottom = offset.bottom;
+
+    var aboveTop = elementBottom <= windowTop;
+    var belowTop = elementBottom >= windowTop;
+
+    var aboveBottom = elementTop <= windowBottom;
+    var belowBottom = elementTop >= windowBottom;
+
+    if (belowTop && aboveBottom) {
+      position.in = true;
+    } else {
+      position.out = true;
+      position.above = aboveTop;
+      position.below = belowBottom;
     }
-    return (
-      (offset.top >= scrollY) && (offset.top <= scrollY + windowHeight) ||
-      (offset.bottom >= scrollY) && (offset.bottom <= scrollY + windowHeight)
-    );
+
+    return position;
   };
 
   var _checkElement = function(obj) {
     // Check if an element is within the viewport and trigger
     // events when an element enters or exits.
     var offset = obj.offset;
-    var event = null;
+    var bindings = obj.bindings;
+    var position = offsetFromViewport(offset);
 
-    var inViewport = offsetInViewport(offset);
-
-    var eventIdentifier = obj.eventIdentifier;
-
-    if (inViewport && !obj.inViewport) {
+    // Enter
+    if (position.in && !obj.inViewport) {
       obj.inViewport = true;
-      event = 'scroll:enter:' + eventIdentifier;
-    } else if (!inViewport && obj.inViewport) {
+      if (bindings.enter) {
+        bindings.enter()
+      }
+    // Exit
+    } else if (position.out && obj.inViewport) {
       obj.inViewport = false;
-      event = 'scroll:exit:' + eventIdentifier;
+      if (bindings.exit) {
+        bindings.exit()
+      }
     }
-
-    if (event) {
-      events.trigger(event);
+    // Above
+    if (position.above && bindings.above) {
+      bindings.above();
+    // Below
+    } else if (position.below && bindings.below) {
+      bindings.below();
     }
   };
 
@@ -80,16 +106,12 @@ define([
     _.each(elementsToWatch, _checkElement);
   };
 
-  var getScrollYWrapper = function() {
-    return getScrollY() + fixedHeaderHeight;
-  };
-
   var getWindowHeight = function() {
     return window.innerHeight - (fixedHeaderHeight);
   };
 
   var onScroll = function() {
-    scrollY = getScrollYWrapper();
+    scrollY = getScrollY();
     checkElements();
   };
 
@@ -97,15 +119,6 @@ define([
     windowHeight = getWindowHeight();
     reinitialiseElements();
   };
-
-//  var forceRecheck = function() {
-//    // reset all inViewport attributes
-//    for (var i = 0; i < elementsToWatch.length; i++) {
-//      elementsToWatch[i].inViewport = false;
-//    }
-//    // trigger on scroll
-//    onScroll();
-//  };
 
   var setBindings = function() {
     $(window).on('scroll', _.throttle(onScroll, 75));
@@ -115,14 +128,14 @@ define([
   var init = function() {
     fixedHeaderHeight = $('.navbar').outerHeight();
 
-    scrollY = getScrollYWrapper();
+    scrollY = getScrollY();
     windowHeight = getWindowHeight();
     setBindings();
   };
 
   return {
     init: init,
-//    forceRecheck: forceRecheck,
-    watchElement: watchElement
+    checkElements: checkElements,
+    observe: observe
   };
 });

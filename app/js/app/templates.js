@@ -18,6 +18,7 @@ define([
 
   var article;
   var content;
+  var body;
 
   var _getTemplatePath = function(file) {
     return '/templates/' + templateDir + '/' + file;
@@ -40,7 +41,6 @@ define([
       image.css({
         'background-image': 'url(/images/' + data.image + ')'
       });
-
     });
   };
 
@@ -52,7 +52,8 @@ define([
   };
 
   var insertIdentifier = function() {
-    article.addClass(templateDir)
+    article.add(body)
+      .addClass(templateDir)
   };
 
   var init = function() {
@@ -66,6 +67,7 @@ define([
 
     article = $('article');
     content = article.find('.content');
+    body = $('body');
 
     insertData();
     insertContent();

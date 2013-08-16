@@ -1,8 +1,8 @@
 define([
   'jquery',
   'scroll',
-  'events'
-], function($, scroll, events) {
+  'lodash'
+], function($, scroll, _) {
 
   var articleTitle;
   var seriesTitle;
@@ -10,25 +10,32 @@ define([
   var main;
   var header;
 
+  var fadeOutNavBarText = function() {
+    articleTitle.addClass('fade-out');
+  };
+
+  var fadeInNavBarText = function() {
+    articleTitle
+      .removeClass('fade-out')
+      .addClass('visible');
+  };
+
   var setBindings = function() {
-    articleTitle.on('mouseover', function() {
-      articleNav.addClass('visible');
-      main.one('mouseover', function() {
-        articleNav.removeClass('visible');
-      })
-    });
+    articleTitle.add(seriesTitle)
+      .on('mouseover', function() {
+        articleNav.addClass('visible');
+        main.one('mouseover', function() {
+          articleNav.removeClass('visible');
+        })
+      });
     articleTitle.on('click', function() {
       articleNav.toggleClass('visible');
     });
 
-    scroll.watchElement(header, 'article-title');
-    events.on('scroll:exit:article-title', function() {
-      articleTitle.add(seriesTitle)
-        .addClass('visible');
-    });
-    events.on('scroll:enter:article-title', function() {
-      articleTitle.add(seriesTitle)
-        .removeClass('visible');
+    scroll.observe(header, {
+      enter: fadeOutNavBarText,
+      exit: fadeInNavBarText,
+      above: _.once(fadeInNavBarText)
     });
   };
 
