@@ -17,7 +17,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #333;
-  background-color: @lightCream; 
+  background-color: @lightCream;
 }
 
 .navbar.special-feature {
@@ -178,7 +178,7 @@ body {
     margin-bottom: 1em;
     padding: 3em 0 1em 0;
     display: inline-block;
-    text-align: center; 
+    text-align: center;
     width: 100%;
     &:before {
       content: " ";
@@ -195,11 +195,11 @@ body {
     .blockout {
       content: " ";
       z-index: -1;
-      width: auto;        
+      width: auto;
       display: inline-block;
       margin: 0 auto;
       padding: 0 .9em;
-      background-color: @lightCream; 
+      background-color: @lightCream;
     }
   }
 
@@ -290,7 +290,7 @@ body {
     max-width: @contentParaWidth * 1.4;
     margin: 0 auto;
     background-color: @white;
-    box-shadow: 0 0 1px @trspBlack; 
+    box-shadow: 0 0 1px @trspBlack;
     .border-radius(3px);
     > img { .border-top-radius(3px); }
     padding: 0;
@@ -311,7 +311,7 @@ body {
     &.text {
       background-color: transparent;
       .border-radius(0);
-      .box-shadow(none); 
+      .box-shadow(none);
       letter-spacing: .1em;
       margin: 0 auto 1em auto;
       padding: 0;
@@ -441,6 +441,26 @@ article {
   &.bad-monks {
 
   }
+  &.timeline {
+    .content {
+        padding-top: 0;
+      #storyjs {
+        background-color: @lightCream;
+        .timenav-background {
+          background-color: @trspCream;
+          .timenav-interval-background {
+            background-color: @lightCream;
+          }
+        }
+      }
+    }
+    .header,
+    .byline,
+    .author,
+    .image {
+        display: none;
+    }
+  }
 }
 
 body.loading {
@@ -483,7 +503,7 @@ body.loading {
   text-shadow: none;
 }
 ::-moz-selection {
-  background: @orange; 
+  background: @orange;
   color: @white;
   text-shadow: none;
 }

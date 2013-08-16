@@ -1,9 +1,9 @@
 {
     "timeline":
     {
-        "headline": "Sri Lankan History",
+        "headline": "A brief history of Sri Lanka",
         "type": "default",
-            "text": "History since independence.",
+            "text": "Independence, conflicts and pivotal moments in the country once known as Ceylon.",
             "startDate": "1945",
             "date": [
                 {
