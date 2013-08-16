@@ -213,12 +213,13 @@ body {
 }
 
 .chapters {
-  max-width: none;
+  max-width: 90%;
   padding: 2em 1.5em 1em 1.5em;
-  margin: 0 auto;
+  margin: 0 auto 4em auto;
   height: 200px;
-  background-color: rgba(0,0,0,0.03);
-  background-color: @trspOrange;
+  background-color: @white;
+    .border-radius(3px);
+    .box-shadow(0 0  1px @trspBlack);
   // border-top: 1px solid @trspBlack;
   .chapter {
     width: 20%;
@@ -230,6 +231,8 @@ body {
       margin-right: 0;
     }
     .image {
+    .border-radius(3px);
+    .box-shadow(0 0  1px @trspBlack);
       background-image: url('/images/6.jpg');
       background-size: cover;
       height: 80%;
