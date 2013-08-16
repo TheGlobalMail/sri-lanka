@@ -30,9 +30,9 @@ define([
 
   var insertData = function() {
     require([getJSONFile('data.json')], function(data) {
-      header.text(data.header);
-      byline.text(data.byline);
-      author.text(data.author);
+      header.html(data.header);
+      byline.html(data.byline);
+      author.html(data.author);
       image.css({
         'background-image': 'url(/images/' + data.image + ')'
       });
