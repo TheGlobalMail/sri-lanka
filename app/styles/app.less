@@ -1,7 +1,12 @@
 @import 'mixins';
 
 @parFontSize: 20;
-@orange: #fd8939;
+@contentParaWidth: 30em;
+
+@orange:    #fd8939;
+@cream:     #feffe6;
+@darkBrown: #170f0b;
+@mauve:     #76716d;
 
 body {
   font-size: 100%;
@@ -101,7 +106,6 @@ body {
   }
 }
 
-@contentParaWidth: 30em;
 .content {
   padding-top: 2em;
   position: relative;
@@ -116,18 +120,20 @@ body {
     padding-right: 20px;
     margin-bottom: 1.4em;
     &:last-child {
-      padding-bottom: 1.4em;
+     // padding-bottom: 1.4em;
     }
   }
   & > p:first-of-type {
     font-weight: bold;
     line-height: 1.4;
     &:first-letter {
-      font-size: 710%;
+      font-size: 3em;
       float: left;
       line-height: .73;
-      margin: 14px 0 -14px -20px;
+      margin: 6px 10px 0 0px;
       text-indent: -5px;
+      font-family: @sansFontFamily;
+      font-weight: 400;
     }
   }
   .pull-quote {
@@ -148,9 +154,20 @@ body {
       }
     }
     &.text {
-      font-size: 2em;
+      font-size: 1.7em;
+      letter-spacing: .1em;
       max-width: @contentParaWidth * 0.8;
-      margin: 2em auto;
+      margin: 2em auto 0 auto;
+      border-top: 1px solid @orange;
+      border-bottom: 1px solid @orange;
+      p {
+        font-family: @sansFontFamily;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 0;
+
+      }
     }
     &.large-image {
       max-width: @contentParaWidth * 1.75;
@@ -192,42 +209,84 @@ article {
         width: 100%;
       }
       .header {
-        top: 40%;
-        color: rgba(255,255,255,0.8);
+        top: 44%;
         font-size: 10em;
         font-family: @sansFontFamily;
-        font-weight: 400;
+        font-weight: 700;
         text-transform: uppercase;
         .font-size(@parFontSize * 2);
         line-height: 1.2em;
-        letter-spacing: 1em;
-        color: @white;
-        text-shadow: 0 0 20px rgba(0,0,0,0.3) ;
+        letter-spacing: 0.8em;
+        word-spacing: 0.3em;
+        color: @cream;
+        opacity: 1;
+        text-shadow: 0 0 80px rgba(0,0,0,.5), 0 1px 2px @darkBrown;
       }
+      .byline, .author {
+        text-shadow: 0 0 5px rgba(0,0,0,0.5) ;
+        letter-spacing: .2em;
+        line-height: 1.4em;
+        .font-size(@parFontSize * 0.8);
+        text-transform: uppercase;
+      }
+
+
       .byline {
-        top: 30%;
+        top: 60%;
         color: rgba(200,200,200,0.7);
-        font-size: 4.8em;
+        color: @orange;
+        opacity: 1;        
       }
       .author {
-        bottom: 20%;
-        color: rgba(200,200,200,0.8);
-        font-size: 3em;
+        bottom: 0%;
+        margin: 0;
+        padding: 3em 0 1em 0;
+        top: auto;
+        color: @white;
+        opacity: 1;
+        #gradient > .vertical-three-colors(rgba(0,0,0,0), @darkBrown, 100%, @darkBrown);
+        background-color: transparent;
+        display: inline-block;
+        &:before {
+          content: " ";
+          border-bottom: 1px dotted @orange;
+          .font-size(@parFontSize);
+          width: @contentParaWidth;
+          left: 50%;
+          opacity: 0.4;
+          margin-left: -1 * (@contentParaWidth / 2);
+          top: .6em;
+          display: block;
+          position: relative;
+          z-index: -1;
+        }
+        .blockout {
+          width: auto;        
+          display: inline-block;
+          margin: 0 auto;
+          padding: 0 .9em;
+          background: #020101; // pinched from silhouette
+        }
       }
       .image {
         height: 100%;
         z-index: 1;
-        background-image: url('/images/soldier-silhouetted.jpg');
+        background-image: url('/images/soldier-silhouetted-2.jpg');
       }
     }
     .content {
-      background-color: black;
+      background-color: @darkBrown;
       p {
-        color: #eee;
+        color: @cream;
         &:last-child {
           padding-bottom: 1.4em;
         }
       }
+
+      .pull-quote p {
+        color: @orange;
+      }
+
     }
   }
   &.bad-monks {
