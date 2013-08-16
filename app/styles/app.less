@@ -46,7 +46,16 @@ body {
     color: #333;
   }
   .header {
-    font-size: 10em;
+    text-align: center;
+    .font-size(@parFontSize * 2);
+    font-family: @sansFontFamily;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    letter-spacing: 0.8em;
+    word-spacing: 0.3em;
+    text-shadow: 0 1px 2px @grayLight;
+    color: @orange;
   }
   .byline {
     font-size: 3em;
@@ -213,14 +222,6 @@ article {
       }
       .header {
         top: 44%;
-        font-size: 10em;
-        font-family: @sansFontFamily;
-        font-weight: 700;
-        text-transform: uppercase;
-        .font-size(@parFontSize * 2);
-        line-height: 1.2em;
-        letter-spacing: 0.8em;
-        word-spacing: 0.3em;
         color: @cream;
         text-shadow: 0 0 80px rgba(0,0,0,.5), 0 1px 2px @darkBrown;
       }
