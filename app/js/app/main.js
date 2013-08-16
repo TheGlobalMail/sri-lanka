@@ -3,8 +3,9 @@ define([
   './layout',
   './timeline',
   './templates',
-  './headerNav'
-], function(events, layout, timeline, templates, headerNav) {
+  './headerNav',
+  'scroll'
+], function(events, layout, timeline, templates, headerNav, scroll) {
   'use strict';
 
   var body;
@@ -26,6 +27,7 @@ define([
     timeline.init();
     templates.init();
     headerNav.init();
+    scroll.init();
   };
 
   return {

@@ -83,7 +83,8 @@ module.exports = function(grunt) {
           '<%= project.app %>/*.html',
           '{.tmp,<%= project.app %>}/styles/{,/*}*.css',
           '{.tmp,<%= project.app %>}/js/{,/*,**/,*/,**/**/}*.js',
-          '<%= project.app %>/images/{,*/}*.{png,jpg,jpeg,webp,svg}'
+          '<%= project.app %>/images/{,*/}*.{png,jpg,jpeg,webp,svg}',
+          '{.tmp,<%= project.app %>}/templates/{,/*,**/,*/,**/**/}*'
         ],
         tasks: ['livereload']
       }

@@ -18,7 +18,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #333;
-  background-color: @lightCream; 
+  background-color: @lightCream;
 }
 
 .navbar.special-feature {
@@ -37,6 +37,15 @@ body {
       position: absolute;
       left: 0;
     }
+  }
+}
+
+.series-title,
+.article-title {
+  opacity: 0;
+  .transition(opacity 2s ease-in-out);
+  &.visible {
+    opacity: 1;
   }
 }
 
@@ -161,10 +170,10 @@ body {
     line-height: 1.4em;
     color: @gray;
     text-transform: uppercase;
-    text-align: center; 
     margin: 0 0 1em 0;
     padding: 3em 0 1em 0;
     display: inline-block;
+    text-align: center;
     width: 100%;
     &:before {
       content: " ";
@@ -180,11 +189,11 @@ body {
     }
     .blockout {
       z-index: -1;
-      width: auto;        
+      width: auto;
       display: inline-block;
       margin: 0 auto;
       padding: 0 .9em;
-      background-color: @lightCream; 
+      background-color: @lightCream;
     }
   }
 
@@ -277,7 +286,7 @@ body {
     max-width: @contentParaWidth * 1.4;
     margin: 0 auto;
     background-color: @white;
-    box-shadow: 0 0 1px @trspBlack; 
+    box-shadow: 0 0 1px @trspBlack;
     .border-radius(3px);
     > img { .border-top-radius(3px); }
     padding: 0;
@@ -291,6 +300,9 @@ body {
           margin-bottom: 0;
         }
       }
+      img {
+        margin-bottom: 1em;
+      }
     }
     &.pull-right {
       margin-right: 10%;
@@ -303,7 +315,7 @@ body {
     &.text {
       background-color: transparent;
       .border-radius(0);
-      .box-shadow(none); 
+      .box-shadow(none);
       letter-spacing: .1em;
       margin: 0 auto 1em auto;
       padding: 0;
@@ -468,6 +480,26 @@ article {
   &.bad-monks {
 
   }
+  &.timeline {
+    .content {
+        padding-top: 0;
+      #storyjs {
+        background-color: @lightCream;
+        .timenav-background {
+          background-color: @trspCream;
+          .timenav-interval-background {
+            background-color: @lightCream;
+          }
+        }
+      }
+    }
+    .header,
+    .byline,
+    .author,
+    .image {
+        display: none;
+    }
+  }
 }
 
 body.loading {
@@ -510,7 +542,7 @@ body.loading {
   text-shadow: none;
 }
 ::-moz-selection {
-  background: @orange; 
+  background: @orange;
   color: @white;
   text-shadow: none;
 }
