@@ -22,12 +22,7 @@ body {
   z-index: 20;
   width: 100%;
   padding: 8px 0px;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-
+  .transform(translateZ(0));
   .brand {
     width: 220px;
     &.brand-center {
@@ -51,15 +46,15 @@ body {
   @articleNavHeight: 200px;
   @navbarHeight: 48px;
   position: fixed;
+  width: 100%;
   height: @articleNavHeight;
   top: @navbarHeight - @articleNavHeight;
+  z-index: 3;
+  .transform(translateZ(0));
+  .transition(top 0.5s ease-in-out);
   background-color: #1b1b1b;
-  width: 100%;
   text-align: left;
   color: #eee;
-  margin: 0 auto;
-  .transition(top 0.5s ease-in-out);
-  z-index: 3;
   &.visible {
     top: @navbarHeight;
   }
