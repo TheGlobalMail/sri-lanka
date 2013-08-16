@@ -42,23 +42,29 @@ body {
 .series-title {
   float: left;
   margin-left: 5px;
-  color: darkgrey;
+  color: @gray;
   font-size: 2em;
   font-family: @serifFontFamily;
   font-weight: 400;
   line-height: 36px;
+  &:hover {
+    color: @orange;
+    text-decoration: none;
+  };
 }
 
 .article-title {
   display: block;
   width: 400px;
-  font-size: 2em;
+  font-size: 1.6em;
   line-height: 32px;
   margin: 0 auto;
   position: relative;
-  color: #eee;
-  font-family: @serifFontFamily;
-  font-weight: 400;
+  color: @cream;
+  font-family: @sansFontFamily;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .2em;
 }
 
 .article-navs {
@@ -274,15 +280,17 @@ body {
   .pull-quote {
     max-width: @contentParaWidth * 1.4;
     margin: 0 auto;
-    border: 0;
+    background-color: @white;
+    box-shadow: 0 0 1px @trspBlack; 
+    .border-radius(3px);
+    > img { .border-top-radius(3px); }
     padding: 0;
     &.pull-right,
     &.pull-left {
-      max-width: 14em;
+      max-width: @contentParaWidth;
       margin-left: 1em;
       margin-right: 1em;
       p {
-        padding: 0;
         &:last-child {
           margin-bottom: 0;
         }
@@ -292,6 +300,9 @@ body {
       }
     }
     &.text {
+      background-color: transparent;
+      .border-radius(0);
+      .box-shadow(none); 
       letter-spacing: .1em;
       margin: 0 auto 1em auto;
       padding: 0;
@@ -313,9 +324,12 @@ body {
       max-width: @contentParaWidth * 1.75;
     }
     p {
+      font-family: @sansFontFamily;
+      color: @gray;
       max-width: 100%;
-      // font-size: 0.75em;
       line-height: 1.5;
+      padding: 1em;
+      font-size: 0.75em;
     }
   }
 }
@@ -452,4 +466,15 @@ body.loading {
   @-ms-keyframes spin {.rotation-frames}
   @-o-keyframes spin {.rotation-frames}
   @keyframes spin {.rotation-frames}
+}
+
+::selection {
+  background: @orange;
+  color: @white;
+  text-shadow: none;
+}
+::-moz-selection {
+  background: @orange; 
+  color: @white;
+  text-shadow: none;
 }
