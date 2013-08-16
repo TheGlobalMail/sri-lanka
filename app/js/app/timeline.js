@@ -1,6 +1,7 @@
 define([
   'jquery',
-  'timelinejs'
+  'timelinejs',
+  'events'
 ], function($, timelinejs, events) {
 
   var timelineConfig = function() {
@@ -17,9 +18,11 @@ define([
   };
 
   var init = function() {
-    if ($('#timeline').length) {
-      timelineConfig();
-    }
+    events.on('template:loaded', function () {
+      if ($('#timeline').length) {
+        timelineConfig();
+      }
+    });
   };
 
   return {
