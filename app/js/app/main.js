@@ -2,8 +2,9 @@ define([
   'events',
   './layout',
   './timeline',
-  './templates'
-], function(events, layout, timeline, templates) {
+  './templates',
+  './headerNav'
+], function(events, layout, timeline, templates, headerNav) {
   'use strict';
 
   var body;
@@ -24,6 +25,7 @@ define([
     layout.init();
     timeline.init();
     templates.init();
+    headerNav.init();
   };
 
   return {
