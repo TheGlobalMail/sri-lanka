@@ -10,7 +10,8 @@ require.config({
     timelinejs: '../components/timelinejs/compiled/js/storyjs-embed',
     handlebars: '../components/handlebars/handlebars',
     text: '../components/requirejs-text/text',
-    json: '../components/requirejs-plugins/src/json'
+    json: '../components/requirejs-plugins/src/json',
+    scroll: './libs/scroll'
   },
   shim: {
     scrollTo: {

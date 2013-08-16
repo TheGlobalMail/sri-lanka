@@ -4,17 +4,7 @@ define([
   'events'
 ], function ($, _, events) {
 
-  var elementsToWatch = [{
-    selector: '#chapters-container',
-    eventIdentifier: 'chapters-container',
-    filter: {
-      exit: function(obj) {
-        // Prevent the exit event from firing if you
-        // scroll above the chapter container
-        return obj.offset.top < scrollY;
-      }
-    }
-  }];
+  var elementsToWatch = [];
 
   // Cached globals values
   var scrollY;
@@ -25,34 +15,21 @@ define([
     return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   };
 
-//  var _populateConfig = function(selector) {
-//    $(selector).each(function() {
-//      var element = $(this);
-//      var id = element.attr('id');
-//      var matches = _(elementsToWatch).filter(function(obj) {
-//        return obj.selector = selector;
-//      });
-//      if (!matches.length) {
-//        elementsToWatch.push({
-//          selector: '#' + id,
-//          eventIdentifier: id
-//        });
-//      }
-//    });
-//  };
-//
-//  var populateConfig = function() {
-//    $('.article-section').each(function() {
-//      _populateConfig('#' + $(this).attr('id'));
-//    });
-//    _populateConfig('.ambient-video, .ambient-audio, #footer');
-//  };
+  var watchElement = function(element, identifier) {
+    var obj = {
+      element: element,
+      eventIdentifier: identifier
+    };
+    obj = _initElement(obj);
+    elementsToWatch.push(obj);
+    return obj;
+  };
 
   var _initElement = function(obj) {
     // Calculate the position of an element and cache
     // as many values as possible
 
-    var element = $(obj.selector);
+    var element = obj.element;
     var offset = element.offset();
     offset.bottom = offset.top + element.outerHeight();
     return _.extend(obj, {
@@ -62,7 +39,7 @@ define([
     });
   };
 
-  var initElements = function() {
+  var reinitialiseElements = function() {
     _.map(elementsToWatch, _initElement);
   };
 
@@ -79,7 +56,6 @@ define([
   var _checkElement = function(obj) {
     // Check if an element is within the viewport and trigger
     // events when an element enters or exits.
-
     var offset = obj.offset;
     var event = null;
 
@@ -92,9 +68,6 @@ define([
       event = 'scroll:enter:' + eventIdentifier;
     } else if (!inViewport && obj.inViewport) {
       obj.inViewport = false;
-      if (obj.filter && obj.filter.exit && !obj.filter.exit(obj)) {
-        return;
-      }
       event = 'scroll:exit:' + eventIdentifier;
     }
 
@@ -122,35 +95,21 @@ define([
 
   var onResize = function() {
     windowHeight = getWindowHeight();
-    initElements();
+    reinitialiseElements();
   };
 
-  var forceRecheckOfElements = function() {
-    // reset all inViewport attributes
-    for (var i = 0; i < elementsToWatch.length; i++) {
-      elementsToWatch[i].inViewport = false;
-    }
-    // trigger on scroll
-    onScroll();
-  };
+//  var forceRecheck = function() {
+//    // reset all inViewport attributes
+//    for (var i = 0; i < elementsToWatch.length; i++) {
+//      elementsToWatch[i].inViewport = false;
+//    }
+//    // trigger on scroll
+//    onScroll();
+//  };
 
   var setBindings = function() {
-    $(window).on('scroll', _.throttle(onScroll, 50));
-    $(window).on('resize', _.debounce(onResize, 50));
-    events.on('layout:change', _.throttle(onResize, 100));
-
-//    $('.article-section').each(function() {
-//      var element = $(this);
-//      if (element.attr('id') !== undefined) {
-//        events.on('media:section:loaded:' + element.attr('id'), function() {
-//          _.each(elementsToWatch, function(obj) {
-//            if (obj.element.is(element)) {
-//              _checkElement(element);
-//            }
-//          });
-//        });
-//      }
-//    });
+    $(window).on('scroll', _.throttle(onScroll, 75));
+    $(window).on('resize', _.debounce(onResize, 75));
   };
 
   var init = function() {
@@ -158,21 +117,12 @@ define([
 
     scrollY = getScrollYWrapper();
     windowHeight = getWindowHeight();
-
-    events.on('layout:end', function() {
-//      populateConfig();
-      setBindings();
-//      initElements();
-      checkElements();
-      events.trigger('scroll:end');
-    });
-
-    // Bit of a hack to trigger scroll events immediately after audio is loaded
-    events.on('media:ready:audio', forceRecheckOfElements);
-    events.on('media:audio:on', forceRecheckOfElements);
+    setBindings();
   };
 
   return {
-    init: init
+    init: init,
+//    forceRecheck: forceRecheck,
+    watchElement: watchElement
   };
 });
