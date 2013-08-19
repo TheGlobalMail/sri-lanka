@@ -41,12 +41,13 @@ var mountFolder = function(connect, dir) {
 // This is a custom middleware for connect to serve our index.html for pushState requests
 // This should be added after mounting any folders so we can still serve real static files
 var serveIndex = function(req, res) {
-  var index = path.resolve(project.app + '/index.html');
-  var rs = fs.createReadStream(index);
-
-  rs.on('open', function() {
-    rs.pipe(res);
-  });
+  var hashbang = '/#!' + req.url;
+  console.error('redirection ' + req.url + ' to hashbang: ' + hashbang);
+  var body = 'redirecting';
+  res.statusCode = 302;
+  res.setHeader('Location', hashbang);
+  res.setHeader('Content-Length', Buffer.byteLength(body));
+  res.end(req.method === 'HEAD' ? null : body);
 };
 
 // Grunt!!!
