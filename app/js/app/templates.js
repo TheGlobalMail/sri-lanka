@@ -5,16 +5,15 @@ define([
   'events'
 ], function(jquery, handlebars, require, events) {
 
-  
-
-  // Extract templateDir from hashbang
   var templateDir = location.pathname.split('/')[1];
+
   if (!templateDir) {
+    // Extract templateDir from hashbang
     templateDir = location.hash.substring(2).replace(/\//g, '');
-  }
-  // Update url to be nice if pushstate is available
-  if (history && history.pushState) {
-    history.pushState({}, templateDir, templateDir);
+    // Update url to be nice if pushstate is available
+    if (history && history.pushState) {
+      history.pushState({}, templateDir, templateDir);
+    }
   }
 
   if (templateDir === '') {
@@ -26,10 +25,10 @@ define([
   var byline;
   var author;
   var image;
-
   var article;
   var content;
   var body;
+  var nextChapter;
 
   var _getTemplatePath = function(file) {
     return '/templates/' + templateDir + '/' + file;
@@ -52,6 +51,7 @@ define([
       image.css({
         'background-image': 'url(/images/' + data.image + ')'
       });
+      nextChapter.html(data.nextChapter);
     });
   };
 
@@ -79,6 +79,7 @@ define([
     article = $('article');
     content = article.find('.content');
     body = $('body');
+    nextChapter = $('.next-chapter');
 
     insertData();
     insertContent();
