@@ -13,6 +13,7 @@
 @trspCream:   rgba(254, 255, 230,0.3);
 @darkBrown:   #170f0b;
 @brown:       rgb(58, 40, 35);
+@trspDarkBrown:   rgba(25, 16, 12,0.9);
 @trspBlack:   rgba(0,0,0,0.5);
 @trspGray:    rgba(120,120,120,0.5);
 
@@ -72,6 +73,13 @@ body {
   &.visible {
     .transition(opacity 2s ease-in-out);
   }
+
+  // burgertron
+  .burger {
+    font-size: 1.8em;
+    margin: 0 0 0 8px;
+    color: @cream;
+  }
 }
 
 .article-title {
@@ -84,28 +92,9 @@ body {
   letter-spacing: .2em;
 }
 
-.megatron {
-  position: relative;
-  top: 2px;
-  display: inline-block;
-  width: 18px;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0 8px;
-  li {
-    border-top: 2px solid white;
-    border-bottom: 1px solid rgba(255,255,255,0.75);
-    width: 18px;
-    display: block;
-    margin-top: 4px;
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-}
-
 .article-nav-container {
-  background-color: #1b1b1b;
+  background-color: @trspDarkBrown;
+  // background-color: @darkOrange;
   text-align: left;
   color: #eee;
   @fixedArticleNavHeight: 180px;
@@ -122,6 +111,7 @@ body {
     padding-top: @fixedArticleNavPaddingTop;
     &.visible {
       top: @navbarHeight;
+      .box-shadow(0 2px 10px @trspBlack);
     }
   }
   &.footer {
@@ -131,38 +121,66 @@ body {
     }
   }
   .nav {
-    width: 60%;
+    width: 58%;
     float: left;
     margin: 0;
     li a {
+      border-right: 1px dotted @trspOrange;
       &,
       &:hover {
         background-color: transparent !important;
       }
     }
+      li:first-child a {
+        border-left: 1px dotted @trspOrange;        
+      };
   }
-  .about-the-series {
-    width: 20%;
-    height: @fixedArticleNavHeight - 40px;
+
+  .nav-extra {
+    font-size: 1.4em;
+    font-family: @sansFontFamily;
+    color: @cream;
+    width: 21%;
     float: left;
     position: relative;
-    p {
-      padding: 1em;
-    }
-  }
-  .appendix {
-    width: 20%;
     margin: 0;
     padding: 0;
-    list-style: none;
-    float: left;
-    li {
-
+    p {
+      padding: 0 1em 1em 1em;
+    }
+    .title {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: @orange;
+      letter-spacing: 0.1em;
+      padding: 0 1em 0em 1em;
     }
     a {
-      color: white;
-      text-decoration: underline;
+      color: @cream;
       background-color: transparent;
+      text-transform: uppercase;
+      font-size: 90%;
+      letter-spacing: 1px;
+      font-weight: bold;
+      text-decoration: none;
+      &:hover {
+        color: @orange;
+      };
+      i {
+        font-size: 120%;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .about-the-series {
+    height: @fixedArticleNavHeight - 40px;
+  }
+
+  .appendix {
+    list-style: none;
+    li {
+      padding: 0 1em 0.5em 1em;
     }
   }
   .overlay-anchor {
@@ -176,22 +194,28 @@ body {
 
 .article-nav {
   width: 28%;
-  margin-left: 5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  // background: red;
   height: 100%;
   position: relative;
   float: left;
   .article-nav-title {
-    font-family: @serifFontFamily;
-    font-size: 2em;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @orange;
+    letter-spacing: 0.1em;
   }
   .article-nav-subtitle {
     font-family: @serifFontFamily;
   }
   .image {
     background-size: cover;
-    width: 70%;
+    width: 100%;
     height: 120px;
-    test: he;
+    margin-bottom: 1em;
+    .border-radius(3px);
     .bad-monks& {
       background-image: url('/images/srilanka068.jpg');
     }
