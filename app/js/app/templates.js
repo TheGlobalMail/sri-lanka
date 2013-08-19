@@ -5,7 +5,15 @@ define([
   'events'
 ], function(jquery, handlebars, require, events) {
 
-  var templateDir = location.pathname.split('/')[1];
+  
+
+  // Extract templateDir from hashbang
+  var templateDir = location.hash.substring(2).replace(/\//g, '');
+  // Update url to be nice if pushstate is available
+  if (history && history.pushState) {
+    history.pushState({}, templateDir, templateDir);
+  }
+
   if (templateDir === '') {
     templateDir = 'introduction';
   }
