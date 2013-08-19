@@ -35,7 +35,7 @@ define([
   var insertData = function() {
     require([getJSONFile('data.json')], function(data) {
       header.html(data.header);
-      stickyHeader.html(data.articleTitle);
+      stickyHeader.html(data.header);
       byline.html(data.byline);
       author.html(data.author);
       image.css({

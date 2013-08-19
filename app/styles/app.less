@@ -51,28 +51,52 @@ body {
   &:hover {
     color: @orange;
     text-decoration: none;
-  };
+  }
 }
 
-.article-title {
+.article-title-container {
   display: block;
   width: 400px;
-  font-size: 1.6em;
-  line-height: 32px;
   margin: 0 auto;
   position: relative;
-  color: @cream;
-  font-family: @sansFontFamily;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .2em;
   opacity: 0;
   .transition(opacity 2s ease-in-out);
+  cursor: pointer;
   &.visible {
     opacity: 1;
     &.fade-out {
       opacity: 0;
       .transition(opacity 0.75s ease-in-out);
+    }
+  }
+}
+
+.article-title {
+  font-size: 1.6em;
+  line-height: 32px;
+  color: @cream;
+  font-family: @sansFontFamily;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+.megatron {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  width: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 8px;
+  li {
+    border-top: 2px solid white;
+    border-bottom: 1px solid rgba(255,255,255,0.75);
+    width: 18px;
+    display: block;
+    margin-top: 4px;
+    &:first-child {
+      margin-top: 0;
     }
   }
 }
