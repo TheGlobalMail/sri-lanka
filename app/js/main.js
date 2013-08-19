@@ -29,10 +29,12 @@ require.config({
 require([
   'jquery',
   'events',
+  'json',
+  'scroll',
   'config',
   './app/main'
 ],
-function($, events, config, app) {
+function($, events, json, scroll, config, app) {
   if (config.debugEvents) {
     window.fc = events;
   }
