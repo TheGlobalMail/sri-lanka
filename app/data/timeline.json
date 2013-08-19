@@ -22,9 +22,9 @@
                     "endDate" : null,
                     "text" : "Solomon Bandaranaike\u2019s populist Sri Lanka Freedom Party wins government after campaigning on a majoritarian Sinhalese Buddhist ticket.  ",
                     "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
+                        "media" : "./images/timeline/GettyImages_82139288.jpg",
+                        "credit" : "Paul Popper/Popperfoto/Getty Images",
+                        "caption" : "Solomon Bandaranaike c. 1956"
                     },
                     "headline" : "Sri Lanka Freedom Party wins government"
                 },
@@ -110,9 +110,9 @@
                     "endDate" : "1981,6,1",
                     "text" : "The historic Jaffna library is razed in a fire set by a Sinhalese mob after Sinhalese police were killed at a pro-Tamil rally.",
                     "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
+                        "media" : "./images/timeline/2728691.jpg",
+                        "credit" : "Luis Ascui/Getty Images",
+                        "caption" : "A security guard patrols outside the Jaffna in 2003, before it was re-opened to the public the next year."
                     },
                     "headline" : "Jaffna library is burnt down"
                 },
@@ -121,9 +121,9 @@
                     "endDate" : "2009,5,18",
                     "text" : "LTTE rebels kill 13 government soldiers in an ambush. The island-wide \u2018Black July\u2019 anti-Tamil attacks follow \u2013 a pogrom that leaves some 3,000 people dead and forces hundreds of thousands of Tamils to flee abroad. The Sri Lankan civil war begins.",
                     "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
+                        "media" : "./images/timeline/51993110.jpg",
+                        "credit" : "MILITARY PHOTO/AFP/Getty Images",
+                        "caption" : "Sri Lankan soldiers check the remains of an improvised aircraft captured from Tamil Tiger guerrillas in October 1995, at the town of Neerveli in the northern Jaffna peninsula."
                     },
                     "headline" : "LTTE Rebels kill 13 government soldiers sparking a civil war"
                 },
@@ -165,9 +165,9 @@
                     "endDate" : "1993,5,1",
                     "text" : "Sri Lankan President Ranasinghe Premadasa is assassinated by an LTTE suicide bomber in Colombo.",
                     "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
+                        "media" : "./images/timeline/52030486.jpg",
+                        "credit" : "DOUGLAS E. CURRAN/AFP/Getty Images",
+                        "caption" : "A soldier watches the funeral procession of Sri Lankan President Ranasinghe Premadasa  in Colombo, May 6, 1993."
                     },
                     "headline" : "Sri Lankan President is assassinated by an LTTE sucide bomber"
                 },
@@ -198,9 +198,9 @@
                     "endDate" : null,
                     "text" : "John Howard\u2019s Liberal Government wins the Australian federal election in which it promises a \u201cPacific Solution\u201d to stop asylum seekers coming to Australia by boat from neighbouring countries, including Sri Lanka.",
                     "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
+                        "media" : "./images/timeline/680903.jpg",
+                        "credit" : "Nick Laham/Getty Images",
+                        "caption" : "John Howard celebrates victory with his family, after his election win, November 10, 2001"
                     },
                     "headline" : "John Howard's Pacific Solution promises to stop asylum seekers coming by boat, including Sri Lanka."
                 },
@@ -209,9 +209,9 @@
                     "endDate" : "2002",
                     "text" : "As part of a Norwegian-sponsored peace process, a ceasefire is negotiated between Colombo and the LTTE. The Tigers drop demands for a separate Tamil state and the two sides pursue federalist discussions.",
                     "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
+                        "media" : "./images/timeline/51405599.jpg",
+                        "credit" : "STR/AFP/Getty Images",
+                        "caption" : "Tamil Tiger leader Velupillai Prabhakaran signs a historic ceasefire agreement in 2002, to clear the way for Norwegian-brokered peace talks with the Colombo government."
                     },
                     "headline" : "Ceasefire negotiated"
                 },
@@ -231,9 +231,9 @@
                     "endDate" : null,
                     "text" : "The Boxing Day tsunami devastates the island, killing 35,000 people. Disputes simmer between the Tigers and the government over international aid.",
                     "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
+                        "media" : "./images/timeline/51896083.jpg",
+                        "credit" : "JIMIN LAI/AFP/Getty Images",
+                        "caption" : "A house stands amid debris from tsunamis in the Galle district of Sri Lanka, December 27, 2004."
                     },
                     "headline" : "Boxing Day Tsumani kills 35, 000 people"
                 },
