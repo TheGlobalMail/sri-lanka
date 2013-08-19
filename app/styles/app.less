@@ -7,6 +7,7 @@
 @orange:      rgb(253, 137, 57);
 @trspOrange:  rgba(253, 137, 57, 0.3);
 @darkOrange:  darken(@orange, 15%);
+@white:       rgb(255, 255, 255);
 @cream:       rgb(254, 255, 230);
 @lightCream:  lighten(@cream, 4%);
 @trspCream:   rgba(254, 255, 230,0.3);
@@ -322,11 +323,33 @@ body {
   .pull-quote {
     max-width: @contentParaWidth * 1.4;
     margin: 0 auto;
+    padding: 0;
     background-color: @white;
     box-shadow: 0 0 1px @trspBlack;
     .border-radius(3px);
-    > img { .border-top-radius(3px); }
-    padding: 0;
+    > img {
+      margin-bottom: 1em;
+      &:first-child {
+        .border-top-radius(3px);                
+      }
+      &:last-of-type {
+        margin-bottom: 0;                
+      }
+    }
+
+    p, .caption {
+      // .caption class so we can recycle this in the timeline
+      font-family: @sansFontFamily;
+      color: @gray;
+      max-width: 100%;
+      line-height: 1.5;
+      padding: 1em;
+      font-size: 0.65em;
+      &:empty {
+        padding: 0;
+      }
+    }
+
     &.pull-right,
     &.pull-left {
       max-width: @contentParaWidth * .75;
@@ -337,18 +360,11 @@ body {
           margin-bottom: 0;
         }
       }
-      img {
-        margin-bottom: 1em;
-      }
     }
-    &.pull-right {
-      margin-right: 10%;
-    }
+    &.pull-right  { margin-right: 10%; }
+    &.pull-left   { margin-left: 10%; }
 
-    &.pull-left {
-      margin-left: 10%;
-    }
-
+    // big pullquote
     &.text {
       text-rendering: optimizeLegibility;
       background-color: transparent;
@@ -374,14 +390,6 @@ body {
     }
     &.large-image {
       max-width: @contentParaWidth * 1.75;
-    }
-    p {
-      font-family: @sansFontFamily;
-      color: @gray;
-      max-width: 100%;
-      line-height: 1.5;
-      padding: 1em;
-      font-size: 0.75em;
     }
   }
 }
@@ -525,7 +533,9 @@ article {
   &.timeline {
     .content {
         padding-top: 0;
-      #storyjs {
+      .vco-storyjs {
+
+        // basics
         background-color: @lightCream;
         .timenav-background {
           background-color: @trspCream;
@@ -533,7 +543,49 @@ article {
             background-color: @lightCream;
           }
         }
-      }
+
+
+        .vco-slider {
+
+          // intro slide styling
+          h2.start {
+            .article-header .header;
+          }
+          .slider-item-container > .slider-item:first-child {
+            // display: block !important;
+            p {
+              .article-header .byline;
+            }
+          }
+
+          // image & caption styling
+          .slider-item .content .content-container .media .media-wrapper .media-container {
+            background-color: @white;
+            box-shadow: 0 0 1px @trspBlack;
+            .border-radius(3px);
+            .media-shadow {
+              &:before, &:after { display: none; }
+            }
+
+            .media-image {
+              border: none;
+              &:first-child {
+                .border-top-radius(3px);                
+              }
+            }
+
+            // captions
+            .caption {
+              .content .pull-quote .caption;
+              margin-top: 0;
+            }
+            .credit {
+              padding: 0 1em;
+            }
+
+          }
+        }
+      } // /.vco-storyjs
     }
     .header,
     .byline,
