@@ -94,12 +94,11 @@ body {
 
 .article-nav-container {
   background-color: @trspDarkBrown;
-  // background-color: @darkOrange;
   text-align: left;
   color: #eee;
   @fixedArticleNavHeight: 180px;
   @navbarHeight: 48px;
-  @fixedArticleNavPaddingTop: 12px;
+  @fixedArticleNavPaddingTop: 20px;
   &.fixed {
     position: fixed;
     width: 100%;
@@ -178,6 +177,9 @@ body {
   }
 
   .appendix {
+    .title {
+      font-weight: normal;
+    }
     list-style: none;
     li {
       padding: 0 1em 0.5em 1em;
@@ -203,9 +205,11 @@ body {
   .article-nav-title {
     font-size: 1.4em;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
     color: @orange;
     letter-spacing: 0.1em;
+    margin-bottom: 1em;
+    display: block;
   }
   .article-nav-subtitle {
     font-family: @serifFontFamily;
@@ -214,7 +218,6 @@ body {
     background-size: cover;
     width: 100%;
     height: 120px;
-    margin-bottom: 1em;
     .border-radius(3px);
     .bad-monks& {
       background-image: url('/images/srilanka068.jpg');
