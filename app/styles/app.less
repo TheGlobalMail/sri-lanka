@@ -124,33 +124,12 @@ body {
     width: 60%;
     float: left;
     margin: 0;
-  }
-  .article-nav {
-    width: 28%;
-    margin-left: 5%;
-    height: 100%;
-    position: relative;
-    float: left;
-  }
-  .article-nav-title {
-    font-family: @serifFontFamily;
-    font-size: 2em;
-  }
-  .article-nav-subtitle {
-    font-family: @serifFontFamily;
-  }
-  .image {
-    background-image: url('/images/6.jpg');
-    background-size: cover;
-    width: 70%;
-    height: 120px;
-  }
-  .overlay-anchor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    li a {
+      &,
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
   }
   .about-the-series {
     width: 20%;
@@ -172,6 +151,44 @@ body {
     a {
       color: white;
       text-decoration: underline;
+      background-color: transparent;
+    }
+  }
+  .overlay-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.article-nav {
+  width: 28%;
+  margin-left: 5%;
+  height: 100%;
+  position: relative;
+  float: left;
+  .article-nav-title {
+    font-family: @serifFontFamily;
+    font-size: 2em;
+  }
+  .article-nav-subtitle {
+    font-family: @serifFontFamily;
+  }
+  .image {
+    background-size: cover;
+    width: 70%;
+    height: 120px;
+    test: he;
+    .bad-monks& {
+      background-image: url('/images/srilanka068.jpg');
+    }
+    .plight-of-the-tamils& {
+      background-image: url('/images/srilanka051.jpg');
+    }
+    .rajapaksa-inc& {
+      background-image: url('/images/6.jpg');
     }
   }
 }
