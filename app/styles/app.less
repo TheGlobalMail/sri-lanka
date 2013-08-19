@@ -349,17 +349,20 @@ body {
     margin: 0 auto 0.5em auto;
     padding: 0;
     background-color: @white;
-    box-shadow: 0 0 1px @trspBlack;
     .border-radius(3px);
     .clearfix;
     > img {
       margin-bottom: 1em;
-      &:first-child {
-        .border-top-radius(3px);                
-      }
+      .border-top-radius(3px);
+      .border-bottom-radius(3px);
       &:last-of-type {
+        .border-bottom-radius(0);
         margin-bottom: 0;                
       }
+    }
+
+    .paragraph-container {
+      border: 1px solid @trspGray;
     }
 
     p, .caption {
