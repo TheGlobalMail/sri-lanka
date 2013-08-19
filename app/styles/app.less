@@ -11,6 +11,7 @@
 @lightCream:  lighten(@cream, 4%);
 @trspCream:   rgba(254, 255, 230,0.3);
 @darkBrown:   #170f0b;
+@brown:       rgb(58, 40, 35);
 @trspBlack:   rgba(0,0,0,0.5);
 @trspGray:    rgba(120,120,120,0.5);
 
@@ -316,16 +317,18 @@ body {
     }
 
     &.text {
+      text-rendering: optimizeLegibility;
       background-color: transparent;
       .border-radius(0);
       .box-shadow(none);
-      letter-spacing: .1em;
+      letter-spacing: .075em;
       margin: 0 auto 1em auto;
       padding: 0;
       border-top: 1px dotted @orange;
       border-bottom: 1px dotted @orange;
       p {
-        font-size: 1.6em;
+        font-size: 1.65em;
+        line-height: 1.5;
         color: @darkOrange;
         text-shadow: 0 -1px 0 @white;
         font-family: @sansFontFamily;
@@ -394,7 +397,7 @@ body {
 // Article specific styling
 article {
   &.introduction {
-    background-color: @darkBrown;
+    background-color: @brown;
 
     .article-header {
       height: 70vh;
@@ -455,8 +458,11 @@ article {
       }
     }
     .content {
+      #gradient > .vertical-three-colors(@darkBrown, @brown, 32%, @brown);
+
       > p {
         color: @cream;
+        font-size: 1.1em;
         &:last-child {
           padding-bottom: 1.4em;
         }
@@ -465,7 +471,7 @@ article {
       .pull-quote {
         p {
           color: @orange;
-          text-shadow: 0 1px 0 @trspCream, 0 -1px 0 @black;
+          text-shadow: 0 2px 1px @darkBrown;
         }
         border-top-color: @trspOrange;
         border-bottom-color: @trspOrange;
