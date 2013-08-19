@@ -44,7 +44,7 @@ define([
 
   var insertIdentifier = function() {
     article.add(body)
-      .addClass(templateDir)
+      .addClass(templateDir);
   };
 
   var insertData = function() {
