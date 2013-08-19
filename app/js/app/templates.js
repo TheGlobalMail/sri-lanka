@@ -42,6 +42,11 @@ define([
     return 'text!' + _getTemplatePath(file);
   };
 
+  var insertIdentifier = function() {
+    article.add(body)
+      .addClass(templateDir)
+  };
+
   var insertData = function() {
     require([getJSONFile('data.json')], function(data) {
       header.html(data.header);
@@ -51,20 +56,22 @@ define([
       image.css({
         'background-image': 'url(/images/' + data.image + ')'
       });
-      nextChapter.html(data.nextChapter);
+      events.trigger('template:inserted:data');
     });
   };
 
   var insertContent = function() {
     require([getTextFile('content.html')], function(text) {
       content.append(text);
-      events.trigger('template:loaded');
-    })
+      events.trigger('template:inserted:content');
+    });
   };
 
-  var insertIdentifier = function() {
-    article.add(body)
-      .addClass(templateDir)
+  var insertNextChapter = function() {
+    require([getTextFile('next-chapter.html')], function(text) {
+      nextChapter.append(text);
+      events.trigger('template:inserted:next-chapter');
+    });
   };
 
   var init = function() {
@@ -81,9 +88,10 @@ define([
     body = $('body');
     nextChapter = $('.next-chapter');
 
+    insertIdentifier();
     insertData();
     insertContent();
-    insertIdentifier();
+    insertNextChapter();
   };
 
   return {

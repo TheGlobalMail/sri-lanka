@@ -438,7 +438,35 @@ body {
       }
     };
   }
-
+  form {
+    max-width: @contentParaWidth;
+    margin: 1em auto;
+    input {
+      font-family: @sansFontFamily;
+    }
+    input[type="email"] {
+      border: 1px solid #b9b9b9;
+      -webkit-box-shadow: inset 2px 2px 2px 0 #ddd;
+      -moz-box-shadow: inset 2px 2px 2px 0 #ddd;
+      box-shadow: inset 2px 2px 2px 0 #ddd;
+      display: block;
+      color: #808080;
+      padding-left: 10px;
+      width: 216px;
+      margin: 0 auto 10px auto;
+    }
+    input[type="submit"] {
+      background-color: #333;
+      border-radius: 3px;
+      border-style: none;
+      color: #fff;
+      display: block;
+      font-weight: 700;
+      height: 36px;
+      margin: 0.5em auto 10px auto;
+      width: 232px;
+    }
+  }
 }
 
 // Article specific styling
@@ -604,7 +632,9 @@ article {
 
 body.loading {
   background: #333;
-  #main {
+  #main,
+  .navbar.special-feature,
+  article-nav-container.fixed {
     display: none;
   }
   .pre-load-background {

@@ -1,21 +1,32 @@
 define([
+  'lodash',
   'events',
   './layout',
   './timeline',
   './templates',
   './headerNav',
   'scroll'
-], function(events, layout, timeline, templates, headerNav, scroll) {
+], function(_, events, layout, timeline, templates, headerNav, scroll) {
   'use strict';
 
   var body;
 
   var removeLoadingState = function() {
+    events.trigger('loading:complete');
     body.removeClass('loading');
   };
 
   var setBindings = function() {
-    events.on('layout:complete', removeLoadingState);
+    var loadingStateUntil = [
+      'layout:complete',
+      'template:inserted:data',
+      'template:inserted:content',
+      'template:inserted:next-chapter'
+    ];
+    var loadingStageComplete = _.after(loadingStateUntil.length, removeLoadingState);
+    _.each(loadingStateUntil, function(eventName) {
+      events.on(eventName, loadingStageComplete);
+    })
   };
 
   var init = function() {
