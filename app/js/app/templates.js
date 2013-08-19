@@ -27,6 +27,8 @@ define([
   var image;
   var article;
   var content;
+  var pageTitle;
+  var titleSeparator = ' | ';
   var body;
   var nextChapter;
 
@@ -50,6 +52,11 @@ define([
   var insertData = function() {
     require([getJSONFile('data.json')], function(data) {
       header.html(data.header);
+      pageTitle.text(
+        (data.pageTitle || data.header) +
+        titleSeparator +
+        pageTitle.text().split(titleSeparator)[1]
+      );
       stickyHeader.html(data.header);
       byline.html(data.byline);
       author.html(data.author);
@@ -85,6 +92,7 @@ define([
 
     article = $('article');
     content = article.find('.content');
+    pageTitle = $('title');
     body = $('body');
     nextChapter = $('.next-chapter');
 
