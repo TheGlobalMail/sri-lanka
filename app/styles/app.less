@@ -103,23 +103,31 @@ body {
   }
 }
 
-.article-navs {
-  @articleNavHeight: 180px;
-  @navbarHeight: 48px;
-  @articleNavPaddingTop: 12px;
-  position: fixed;
-  width: 100%;
-  height: @articleNavHeight;
-  top: @navbarHeight - @articleNavHeight - @articleNavPaddingTop;
-  z-index: 3;
-  .transform(translateZ(0));
-  .transition(top 0.5s ease-in-out);
+.article-nav-container {
   background-color: #1b1b1b;
   text-align: left;
   color: #eee;
-  padding-top: @articleNavPaddingTop;
-  &.visible {
-    top: @navbarHeight;
+  @fixedArticleNavHeight: 180px;
+  @navbarHeight: 48px;
+  @fixedArticleNavPaddingTop: 12px;
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    height: @fixedArticleNavHeight;
+    top: @navbarHeight - @fixedArticleNavHeight - @fixedArticleNavPaddingTop;
+    z-index: 3;
+    .transform(translateZ(0));
+    .transition(top 0.5s ease-in-out);
+    padding-top: @fixedArticleNavPaddingTop;
+    &.visible {
+      top: @navbarHeight;
+    }
+  }
+  &.footer {
+    color: #333;
+    .appendix a {
+      color: #333;
+    }
   }
   .nav {
     width: 60%;
@@ -134,7 +142,7 @@ body {
   }
   .about-the-series {
     width: 20%;
-    height: @articleNavHeight - 40px;
+    height: @fixedArticleNavHeight - 40px;
     float: left;
     position: relative;
     p {
@@ -190,7 +198,7 @@ body {
       background-image: url('/images/srilanka051.jpg');
     }
     .rajapaksa-inc& {
-      background-image: url('/images/6.jpg');
+      background-image: url('/images/166894747.jpg');
     }
   }
 }
@@ -278,49 +286,6 @@ body {
     // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path_relative_to_the_HTML_file', sizingMethod='scale')";
     .box-shadow(0 0  1px @trspBlack);
     .border-radius(3px);
-  }
-}
-
-.chapters {
-  max-width: 90%;
-  padding: 2em 1.5em 1em 1.5em;
-  margin: 0 auto 4em auto;
-  height: 200px;
-  background-color: @white;
-    .border-radius(3px);
-    .box-shadow(0 0  1px @trspBlack);
-  // border-top: 1px solid @trspBlack;
-  .chapter {
-    width: 20%;
-    height: 100%;
-    float: left;
-    margin-right: 6%;
-    position: relative;
-    &:last-child {
-      margin-right: 0;
-    }
-    .image {
-    .border-radius(3px);
-    .box-shadow(0 0  1px @trspBlack);
-      background-image: url('/images/6.jpg');
-      background-size: cover;
-      height: 80%;
-    }
-    .title {
-      display: inline-block;
-      font-weight: 600;
-      .font-size(@parFontSize);
-    }
-    .overlay-anchor {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    &.bad-monks .image {
-      background-image: url('/images/srilanka068.jpg');
-    }
   }
 }
 

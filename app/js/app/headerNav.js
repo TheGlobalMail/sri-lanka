@@ -32,7 +32,7 @@ define([
 
   var init = function() {
     articleTitleContainer = $('.article-title-container');
-    articleNav = $('.article-navs');
+    articleNav = $('.article-nav-container');
     main = $('#main');
     header = $('.header');
     setBindings();
