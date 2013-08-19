@@ -30,11 +30,12 @@ require([
   'jquery',
   'events',
   'json',
+  'text',
   'scroll',
   'config',
   './app/main'
 ],
-function($, events, json, scroll, config, app) {
+function($, events, json, text, scroll, config, app) {
   if (config.debugEvents) {
     window.fc = events;
   }

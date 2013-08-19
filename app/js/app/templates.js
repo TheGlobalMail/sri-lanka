@@ -8,7 +8,10 @@ define([
   
 
   // Extract templateDir from hashbang
-  var templateDir = location.hash.substring(2).replace(/\//g, '');
+  var templateDir = location.pathname.split('/')[1];
+  if (!templateDir) {
+    templateDir = location.hash.substring(2).replace(/\//g, '');
+  }
   // Update url to be nice if pushstate is available
   if (history && history.pushState) {
     history.pushState({}, templateDir, templateDir);
