@@ -322,11 +322,12 @@ body {
   }
   .pull-quote {
     max-width: @contentParaWidth * 1.4;
-    margin: 0 auto;
+    margin: 0 auto 0.5em auto;
     padding: 0;
     background-color: @white;
     box-shadow: 0 0 1px @trspBlack;
     .border-radius(3px);
+    .clearfix;
     > img {
       margin-bottom: 1em;
       &:first-child {
@@ -343,23 +344,28 @@ body {
       color: @gray;
       max-width: 100%;
       line-height: 1.5;
-      padding: 1em;
+      margin: 1em;
+      padding: 0em;
       font-size: 0.65em;
-      &:empty {
-        padding: 0;
-      }
     }
+
+    .credit {
+      text-transform: uppercase; 
+      font-style: italic;
+      font-size: 11px;
+      line-height: 11px;
+      color: @grayLight;
+      display: block;
+      margin: 1em;
+      text-align: right;
+    }
+
 
     &.pull-right,
     &.pull-left {
       max-width: @contentParaWidth * .75;
       margin-left: 1em;
       margin-right: 1em;
-      p {
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
     }
     &.pull-right  { margin-right: 10%; }
     &.pull-left   { margin-left: 10%; }
@@ -580,7 +586,7 @@ article {
               margin-top: 0;
             }
             .credit {
-              padding: 0 1em;
+              .content .pull-quote .credit;
             }
 
           }
