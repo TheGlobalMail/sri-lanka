@@ -298,7 +298,7 @@ module.exports = function(grunt) {
 
     cdn: {
       dist: {
-        src: ['<%= project.dist %>/index.html', './<%= project.dist %>/styles/*.css'],
+        src: ['<%= project.dist %>/*.html', './<%= project.dist %>/styles/*.css'],
         cdn: 'http://sri-lanka-assets.theglobalmail.org'
       },
 

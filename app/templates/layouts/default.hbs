@@ -18,7 +18,7 @@
   <meta property="og:url" content="http://sri-lanka.theglobalmail.org/{{slug}}">
   <meta property="fb:admins" content="259806917383998">
   {{#if image}}
-    <meta property="og:image" content="http://sri-lanka.theglobalmail.org/images/{{image}}">
+    <meta property="og:image" content="{{image}}">
   {{/if}}
 
   <!-- build:js /js/head.js -->
@@ -117,7 +117,7 @@
         <h2 class="byline">{{{byline}}}</h2>
         <h3 class="author">{{{author}}}</h3>
         {{#if image}}
-        <div class="image" data-src="/images/{{image}}" style="background-image: url(/images/{{image}});"></div>
+        <div class="image" data-src="{{image}}" style="background-image: url({{image}});"></div>
         {{/if}}
       </header>
       <section class="content">{{> body }}</section>
