@@ -446,31 +446,34 @@ body {
     }
 
     .paragraph-container {
-      border: 1px solid @trspGray;
+      border: 1px solid lighten(@brown, 70%);
+      border-top: none;
+      .border-bottom-radius(3px);
+      .clearfix;
+
+      p, .caption {
+        // .caption class so we can recycle this in the timeline
+        font-family: @sansFontFamily;
+        color: @gray;
+        max-width: 100%;
+        line-height: 1.5;
+        margin: 1em;
+        padding: 0em;
+        font-size: 0.65em;
+      }
+
+      .credit {
+        text-transform: uppercase; 
+        font-style: italic;
+        font-size: 11px;
+        line-height: 11px;
+        color: @grayLight;
+        display: block;
+        margin: 1em;
+        text-align: right;
+      }
     }
 
-
-    p, .caption {
-      // .caption class so we can recycle this in the timeline
-      font-family: @sansFontFamily;
-      color: @gray;
-      max-width: 100%;
-      line-height: 1.5;
-      margin: 1em;
-      padding: 0em;
-      font-size: 0.65em;
-    }
-
-    .credit {
-      text-transform: uppercase; 
-      font-style: italic;
-      font-size: 11px;
-      line-height: 11px;
-      color: @grayLight;
-      display: block;
-      margin: 1em;
-      text-align: right;
-    }
 
 
     &.pull-right,
@@ -748,11 +751,11 @@ article {
 
             // captions
             .caption {
-              .content .pull-quote .caption;
+              .content .pull-quote .paragraph-container .caption;
               margin-top: 0;
             }
             .credit {
-              .content .pull-quote .credit;
+              .content .pull-quote .paragraph-container .credit;
             }
 
           }
