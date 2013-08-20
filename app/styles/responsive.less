@@ -1,0 +1,105 @@
+// variable for breakpoints
+@smallerWidth:  680px;    // Phones
+@smallWidth:    780px;    // Big phones, small tablets
+@medWidth:      980px;    // Portrait tablets
+@bigWidth:      1025px;   // Landscape tablets, smaller screens
+@biggerWidth:   1026px;   // Big screens (default, used as min-width)
+
+@medScreenMargin: 20px;
+@smlScreenMargin: 10px;
+
+.responsiveBG(@imgName) {
+  @imgBase: "/images/@{imgName}";
+  @media only screen and (min-width: @biggerWidth)  { background-image: url("@{imgBase}-5.jpg"); }
+  @media only screen and (max-width: @bigWidth)     { background-image: url("@{imgBase}-4.jpg"); }
+  @media only screen and (max-width: @medWidth)     { background-image: url("@{imgBase}-3.jpg"); }
+  @media only screen and (max-width: @smallWidth)   { background-image: url("@{imgBase}-2.jpg"); }
+  @media only screen and (max-width: @smallerWidth) { background-image: url("@{imgBase}-1.jpg"); }
+}
+
+// iPad Landscape & smaller screens
+@media only screen and (max-width: @bigWidth) {
+	.article-header {
+		.header {
+			letter-spacing: 0.4em;
+			padding-bottom: 0;
+		}
+	}
+
+	.article-nav-container .nav-extra,
+	.article-nav .article-nav-title  {
+		font-size: 1.2em;
+	}
+
+	article {
+	  &.introduction {
+	    .article-header {
+	      .header {
+			top: 37%;
+	      }
+	  	}
+	  }
+	}
+
+	.content {
+		.pull-quote.pull-left 	{ margin-left: @medScreenMargin; }
+		.pull-quote.pull-right  { margin-right: @medScreenMargin; }
+		.pull-quote.large-image { max-width: 94%; }
+		.pull-quote.text 		{ max-width: 94%; }
+	}
+	.next-chapter { 
+		max-width: 94%; 
+		margin: 0 auto;
+	}
+}
+
+// Portrait tablets
+@media only screen and (max-width: @medWidth) {
+	.article-nav-container {
+		.overlay-coming-soon {
+			top: 50%;
+			height: 50%;
+		}
+		.coming-soon-date {
+			font-size: 1em;
+			font-weight: bold;
+		}
+	}
+
+	.article-header .image {
+		height: 45vh;
+	}
+
+	.content {
+		.pull-quote.text p { 
+			font-size: 1.4em; 
+			br { display: none; }
+		}
+	}
+
+}
+
+// Big phones, small tablets
+@media only screen and (max-width: @smallWidth) {
+
+	.article-nav-container {
+		&.fixed {
+			height: auto;
+		}
+
+		.nav-extra, .nav {
+			width: 100%;
+			float: none;
+			height: auto;
+		}	
+	} 
+
+	.content {
+		.pull-quote.pull-left 	{ max-width: 300px; }
+		.pull-quote.pull-right  { max-width: 300px; }
+	}
+}
+
+// Phones
+@media only screen and (max-width: @smallerWidth) {
+}
