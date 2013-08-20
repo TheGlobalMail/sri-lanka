@@ -7,12 +7,18 @@ define([
 
   var detectHeaderImageLoaded = function() {
     var image = articleHeader.find('.image');
-    var imageSrc = image.css('background-image').replace('url(', '').slice(0, -1);
-    $('<img>')
-      .attr('src', imageSrc)
-      .on('load', function() {
-        events.trigger('media:loaded');
-      });
+    var imageSrc;
+    if (image.length){
+      imageSrc = image.data('src');
+      $('<img>')
+        .attr('src', imageSrc)
+        .on('load', function() {
+          events.trigger('media:loaded');
+        });
+
+    }else{
+      events.trigger('media:loaded');
+    }
   };
 
   var setBindings = function() {

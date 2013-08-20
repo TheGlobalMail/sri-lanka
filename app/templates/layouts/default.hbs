@@ -116,7 +116,9 @@
         <h1 class="header">{{{header}}}</h1>
         <h2 class="byline">{{{byline}}}</h2>
         <h3 class="author">{{{author}}}</h3>
-        <div class="image" style="background-image: url(/images/{{image}});"></div>
+        {{#if image}}
+        <div class="image" data-src="/images/{{image}}" style="background-image: url(/images/{{image}});"></div>
+        {{/if}}
       </header>
       <section class="content">{{> body }}</section>
       <section class="next-chapter">{{{next-chapter}}}</section>
