@@ -278,7 +278,9 @@ module.exports = function(grunt) {
             '*.{ico,txt}',
             '.htaccess',
             'images/*',
-            'templates/**',
+            'data/*',
+            'styles/timeline/*',
+            'components/timelinejs/compiled/js/timeline-min.js',
             'components/font-awesome/font/*'
           ]
         }]
