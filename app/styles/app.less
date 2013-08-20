@@ -446,11 +446,14 @@ body {
     }
 
     .paragraph-container {
-      border: 1px solid @trspGray;
+      border: 1px solid lighten(@brown, 70%);
+      border-top: none;
+      .border-bottom-radius(3px);
+      .clearfix;
     }
 
 
-    p, .caption {
+    .paragraph-container p, .caption {
       // .caption class so we can recycle this in the timeline
       font-family: @sansFontFamily;
       color: @gray;
