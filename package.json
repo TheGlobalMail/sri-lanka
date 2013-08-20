@@ -24,7 +24,8 @@
     "grunt-contrib-htmlmin": "~0.1.1",
     "grunt-rev": "~0.1.0",
     "grunt-cdn": "git://github.com/caphun/grunt-cdn.git",
-    "grunt-cloudfiles": "0.0.3"
+    "grunt-cloudfiles": "0.0.3",
+    "assemble": "~0.4.4"
   },
   "scripts": {
     "start": "grunt build:dev && node server.js",
@@ -37,6 +38,6 @@
   },
   "engines": {
     "node": "0.8.x",
-    "npm":  "1.1.x"
+    "npm": "1.1.x"
   }
 }
