@@ -20,9 +20,6 @@ define([
   var setBindings = function() {
     var loadingStateUntil = [
       'layout:complete',
-      'template:inserted:data',
-      'template:inserted:content',
-      'template:inserted:next-chapter',
       'media:loaded'
     ];
     var loadingStageComplete = _.after(loadingStateUntil.length, removeLoadingState);

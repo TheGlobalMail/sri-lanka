@@ -40,10 +40,12 @@ var mountFolder = function(connect, dir) {
 
 // This is a custom middleware for connect to serve our index.html for pushState requests
 // This should be added after mounting any folders so we can still serve real static files
-var serveIndex = function(req, res) {
-  var index = path.resolve(project.app + '/index.html');
-  var rs = fs.createReadStream(index);
-
+var rewriteHtml = function(req, res, next) {
+  var htmlFile = path.resolve(project.app + req.url + '.html');
+  if (!fs.existsSync(htmlFile)){
+    return next(req, res);
+  }
+  var rs = fs.createReadStream(htmlFile);
   rs.on('open', function() {
     rs.pipe(res);
   });
@@ -55,6 +57,8 @@ module.exports = function(grunt) {
 
   // Look in package.json for grunt devDependencies and load them into grunt
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
+  grunt.loadNpmTasks('assemble');
 
   grunt.initConfig({
     // Add the project dirs into the config so we can reference
@@ -71,6 +75,12 @@ module.exports = function(grunt) {
         tasks: ['less:server']
       },
 
+      // Assemble templates
+      assemble: {
+        files: ['<%= project.app %>/*.hbs','<%= project.app %>/{,*/ }*.json'],
+        tasks: ['assemble:dist']
+      },
+
       /* When any main assets in `project.app` change we should reload the browser
        * Globbing now has OR statements, i.e. app/{js,scripts} will search app/js and app/scripts
        * If you omit the first value it works like an optional match so app/{,js}/*.js
@@ -81,12 +91,13 @@ module.exports = function(grunt) {
       livereload: {
         files: [
           '<%= project.app %>/*.html',
+          '{.tmp,<%= project.app %>}/*.html',
           '{.tmp,<%= project.app %>}/styles/{,/*}*.css',
           '{.tmp,<%= project.app %>}/js/{,/*,**/,*/,**/**/}*.js',
           '<%= project.app %>/images/{,*/}*.{png,jpg,jpeg,webp,svg}',
           '{.tmp,<%= project.app %>}/templates/{,/*,**/,*/,**/**/}*'
         ],
-        tasks: ['livereload']
+        tasks: ['assemble', 'livereload']
       }
     },
 
@@ -108,10 +119,9 @@ module.exports = function(grunt) {
               // try serving real static files first
               mountFolder(connect, '.tmp'),
               mountFolder(connect, project.app),
-              // force livereload snippet because we know we're about to hit serveIndex middleware
-              lrSnippet({ force: true }),
-              // if we get to here, always resond with index.html instead of a 404
-              serveIndex
+              rewriteHtml,
+              // force livereload snippet because we know we're about to hit rewrite middleware
+              lrSnippet({ force: true })
             ];
           }
         }
@@ -123,7 +133,7 @@ module.exports = function(grunt) {
           middleware: function(connect) {
             return [
               mountFolder(connect, 'dist'),
-              serveIndex
+              rewriteHtml
             ];
           }
         }
@@ -280,7 +290,7 @@ module.exports = function(grunt) {
         exclude: ['modernizr']
       },
       all: {
-        rjsConfig: '<%= yeoman.app %>/js/main.js'
+        rjsConfig: '<%= project.app %>/js/main.js'
       }
     },
 
@@ -318,6 +328,18 @@ module.exports = function(grunt) {
           stripcomponents: 1
         }]
       }
+    },
+
+    assemble: {
+      options: {
+        flatten: true,
+        layout: '<%= project.app %>/templates/layouts/default.hbs'
+      },
+      pages: {
+          files: {
+              '<%= project.app %>/': ['<%= project.app %>/templates/pages/*.hbs']
+          }
+      }
     }
   });
 
@@ -344,6 +366,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', function(target) {
     var targets = [
       'jshint:with_overrides',
+      'assemble',
       'clean:dist',
       'less:dist',
       'requirejs',

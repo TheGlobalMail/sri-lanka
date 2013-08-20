@@ -103,6 +103,7 @@ define([
   };
 
   return {
-    init: init
+    // XXX commented out
+    init: function(){}
   };
 });
