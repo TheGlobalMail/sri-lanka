@@ -11,7 +11,7 @@ define([
       var imageSrc = image.css('background-image').replace('url(', '').slice(0, -1);
       $('<img>')
         .attr('src', imageSrc)
-        .load(function() {
+        .on('load', function() {
           events.trigger('media:loaded');
         });
     });
