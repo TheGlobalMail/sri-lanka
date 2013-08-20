@@ -90,7 +90,6 @@
 		margin: 5px @medScreenMargin 0 0;
 		float: right;
 		width: auto;
-		// background-color: lime;
 	}
 
 	.article-nav-container {
@@ -155,7 +154,29 @@
 		}
 	} 
 
+	.article-header {
+		padding: @medScreenMargin;
+		
+		.header {
+			margin-top: 0;
+			margin-bottom: .5em;
+		}
+
+		.byline {
+			font-size: .8em;
+		}
+
+		.author {
+			padding: 1em 0;
+			margin: 0;
+			font-size: .7em;
+			&:before { display: none; }
+		}
+	}
+
+
 	.content {
+		padding-top: 0;
 		.font-size(16);
 		.pull-quote.text p { 
 			font-size: 1.4em; 
@@ -174,6 +195,12 @@
 		// .pull-quote.pull-right  { max-width: 300px; }
 
 		p { .font-size(16); }
+	}
+	.next-chapter { 
+			max-width: none;
+			float: none;
+			margin-left: @medScreenMargin;
+			margin-right: @medScreenMargin;
 	}
 }
 
