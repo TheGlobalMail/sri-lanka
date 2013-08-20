@@ -2,8 +2,8 @@
 @smallerWidth:  680px;    // Phones
 @smallWidth:    780px;    // Big phones, small tablets
 @medWidth:      980px;    // Portrait tablets
-@bigWidth:      1025px;   // Landscape tablets, smaller screens
-@biggerWidth:   1026px;   // Big screens (default, used as min-width)
+@bigWidth:      1120px;   // Landscape tablets, smaller screens
+@biggerWidth:   @bigWidth + 1px;   // Big screens (default, used as min-width)
 
 @medScreenMargin: 20px;
 @smlScreenMargin: 10px;
@@ -42,6 +42,7 @@
 	}
 
 	.content {
+		padding-top: 0;
 		.pull-quote.pull-left 	{ margin-left: @medScreenMargin; }
 		.pull-quote.pull-right  { margin-right: @medScreenMargin; }
 		.pull-quote.large-image { max-width: 94%; }
@@ -176,7 +177,6 @@
 
 
 	.content {
-		padding-top: 0;
 		.font-size(16);
 		.pull-quote.text p { 
 			font-size: 1.4em; 
