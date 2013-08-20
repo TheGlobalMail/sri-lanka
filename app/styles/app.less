@@ -519,7 +519,8 @@ body {
   .call-to-action {
     font-size: 0.8em;
     letter-spacing: .2em;
-    line-height: 1.4em;
+    line-height: 1.2;
+
     color: @orange;
     display: block;
     text-align: center;
@@ -533,50 +534,75 @@ body {
 
     max-width: @contentParaWidth;
 
-    .pointer {
-      font-weight: 100;
-      font-size: 1.4em;
-      color: @trspGray;
+    // &:hover {
+    //   border-color: @darkOrange;
+    //   border-top-style: solid;
+    //   border-bottom-style: solid;
+    // } 
+
+    a {
+      color: @orange;
+
+      .pointer {
+        display: inline-block;
+        font-weight: 100;
+        font-size: 1.5em;
+        // color: @cream;
+        vertical-align: text-bottom;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: @darkOrange;
+        .pointer {
+          color: @darkOrange;
+        }
+      }
     }
 
-    &:hover {
-      text-decoration: none;
-      color: @darkOrange;
-      border-color: @darkOrange;
-      border-top-style: solid;
-      border-bottom-style: solid;
-      .pointer {
-        color: @darkOrange;
-      }
-    };
   }
   form {
     max-width: @contentParaWidth;
     margin: 1em auto;
     input {
       font-family: @sansFontFamily;
+      width: 65%;
+      box-sizing: border-box;
+      line-height: 1.4;
+      height: 2.5em;
+      // padding: 10px;
     }
     input[type="email"] {
       border: 1px solid #b9b9b9;
-      -webkit-box-shadow: inset 2px 2px 2px 0 #ddd;
-      -moz-box-shadow: inset 2px 2px 2px 0 #ddd;
-      box-shadow: inset 2px 2px 2px 0 #ddd;
+      .box-shadow(inset 2px 2px 2px 0 #ddd);
       display: block;
-      color: #808080;
-      padding-left: 10px;
-      width: 216px;
-      margin: 0 auto 10px auto;
+      color: #333;
+      background-color: @white;
+      text-align: center;
+      margin: 0 auto 20px auto;
+      &:active, &:focus,
+      &:active:required, &:focus:required {
+        border-color: @orange;
+        .box-shadow(none);
+      }
     }
     input[type="submit"] {
       background-color: #333;
-      border-radius: 3px;
+      .border-radius(3px);
       border-style: none;
       color: #fff;
       display: block;
       font-weight: 700;
       height: 36px;
       margin: 0.5em auto 10px auto;
-      width: 232px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      &:hover, &:active {
+        background-color: @orange; 
+      }
+      &:active {
+        .box-shadow(inset 4px 4px 6px 0 @darkOrange);
+      };
     }
   }
 }
