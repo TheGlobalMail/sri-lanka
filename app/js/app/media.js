@@ -6,15 +6,13 @@ define([
   var articleHeader;
 
   var detectHeaderImageLoaded = function() {
-    events.on('template:inserted:data', function() {
-      var image = articleHeader.find('.image');
-      var imageSrc = image.css('background-image').replace('url(', '').slice(0, -1);
-      $('<img>')
-        .attr('src', imageSrc)
-        .on('load', function() {
-          events.trigger('media:loaded');
-        });
-    });
+    var image = articleHeader.find('.image');
+    var imageSrc = image.css('background-image').replace('url(', '').slice(0, -1);
+    $('<img>')
+      .attr('src', imageSrc)
+      .on('load', function() {
+        events.trigger('media:loaded');
+      });
   };
 
   var setBindings = function() {
