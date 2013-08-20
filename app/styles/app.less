@@ -89,7 +89,8 @@ body {
     position: fixed;
     width: 100%;
     height: @fixedArticleNavHeight;
-    top: @navbarHeight - @fixedArticleNavHeight - @fixedArticleNavPaddingTop;
+    // Initialise outside the viewport, inline css takes over afterwards
+    top: -9999px;
     z-index: 3;
     .transform(translateZ(0));
     .transition(top 0.5s ease-in-out);
