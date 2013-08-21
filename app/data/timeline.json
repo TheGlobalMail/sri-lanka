@@ -18,7 +18,7 @@
                     "headline" : "Ceylon gains independence"
                 },
                 {
-                    "startDate" : "1956,12,4",
+                    "startDate" : "1956,4,12",
                     "endDate" : null,
                     "text" : "Solomon Bandaranaike\u2019s populist Sri Lanka Freedom Party wins government after campaigning on a majoritarian Sinhalese Buddhist ticket.  ",
                     "asset" : {
@@ -29,8 +29,8 @@
                     "headline" : "Sri Lanka Freedom Party wins government"
                 },
                 {
-                    "startDate" : "1956",
-                    "endDate" : "1958",
+                    "startDate" : "1956,6",
+                    "endDate" : null,
                     "text" : "The controversial Sinhala Only Act is passed. It denies official recognition to the Tamil language, spoken at the time by around 25 per cent of the island\u2019s population.",
                     "asset" : {
                         "media" : null,
@@ -63,7 +63,7 @@
                 },
                 {
                     "startDate" : "1971",
-                    "endDate" : "1977,8,4",
+                    "endDate" : null,
                     "text" : " An official \u2018Standardisation\u2019 education quota policy is introduced, which limits Tamil access to universities. A Marxist rebellion begins among the southern Sinhalese community.",
                     "asset" : {
                         "media" : null,
@@ -112,7 +112,7 @@
                     "asset" : {
                         "media" : "./images/timeline/library.jpg",
                         "credit" : "Luis Ascui/Getty Images",
-                        "caption" : "A security guard patrols outside the Jaffna library in 2003, before it was re-opened to the public the next year."
+                        "caption" : "A security guard patrols outside the Jaffna library in 2003,  before it was re-opened to the public later that year."
                     },
                     "headline" : "Mob burns Jaffna library"
                 },
@@ -123,14 +123,14 @@
                     "asset" : {
                         "media" : "./images/timeline/ruined-aircraft.jpg",
                         "credit" : "MILITARY PHOTO/AFP/Getty Images",
-                        "caption" : "The civil war would last until May 2009. This 1995 photo shows Sri Lankan soldiers checking the remains of an impoverished aircraft captured from Tamil Tigers guerrillas in the town of Neerveli in the northern Jaffna peninsula."
+                        "caption" : "The civil war would last until May 2009. This 1995 photo shows Sri Lankan soldiers checking the remains of an aircraft captured from Tamil Tigers guerrillas in the town of Neerveli in the northern Jaffna peninsula."
                     },
                     "headline" : "Rebel ambush sparks civil war"
                 },
                 {
                     "startDate" : "1987,7,29",
                     "endDate" : "1990,3,24",
-                    "text" : "India signs the indo-Sri Lanka Peace Accord with Sri Lanka, after which Indian troops begin \u2018peace-keeping\u2019 operations in the north-east; these quickly descend into a war against the LTTE that rages until 1990, when India withdraws.",
+                    "text" : "India signs the Indo-Sri Lanka Peace Accord with Sri Lanka, after which Indian troops begin \u2018peace-keeping\u2019 operations in the north-east; these quickly descend into a war against the LTTE that rages until 1990, when India withdraws.",
                     "asset" : {
                         "media" : "./images/timeline/indian-troops.jpg",
                         "credit" : "DOUGLAS E. CURRAN/AFP/Getty Images",
@@ -183,17 +183,6 @@
                     "headline" : "Tamil capital falls to government forces"
                 },
                 {
-                    "startDate" : "2001,9,11",
-                    "endDate" : null,
-                    "text" : " Al-Qaeda\u2019s attacks in the US trigger its War on Terror. The Eelam Tigers, craving international recognition, start making peace overtures. ",
-                    "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
-                    },
-                    "headline" : "LTTE peace overtures"
-                },
-                {
                     "startDate" : "2001,11,10",
                     "endDate" : null,
                     "text" : "John Howard\u2019s Liberal Government wins the Australian federal election promising a \u201cPacific Solution\u201d to stop asylum seekers coming to Australia by boat from neighbouring countries, including Sri Lanka.",
@@ -213,23 +202,23 @@
                         "credit" : "STR/AFP/Getty Images",
                         "caption" : "Tamil Tiger leader Velupillai Prabhakaran signs a historic ceasefire agreement in 2002, to clear the way for Norwegian-brokered peace talks with the Colombo government."
                     },
-                    "headline" : "Ceasefire in Sri Lanka"
+                    "headline" : "Ceasefire negotiated in Sri Lanka"
                 },
                 {
                     "startDate" : "2004,3",
                     "endDate" : null,
-                    "text" : "The LTTE\u2019s eastern commander Colonel Karuna breaks with the LTTE, splitting the weakened movement in two. ",
+                    "text" : "The LTTE\u2019s eastern commander Colonel Karuna breaks with the movement's northern leadership, splitting the Tigers in half.",
                     "asset" : {
                         "media" : "./images/timeline/beach-lanterns.jpg",
                         "credit" : "PRAKASH SINGH/AFP/Getty Images",
-                        "caption" : "Earthen lamps spell 'Tsumani 2004' in Sinhalese on Unawatuna Beach, in January 2005."
+                        "caption" : null
                     },
                     "headline" : "LTTE split"
                 },
                 {
                     "startDate" : "2004,12,26",
                     "endDate" : null,
-                    "text" : "The Boxing Day tsunami devastates the island, killing 35,000 people. Disputes simmer between the Tigers and the government over international aid.",
+                    "text" : "The Boxing Day tsunami devastates the island, killing 35,000 people. Disputes simmer between the Tigers and the government over international aid, as Colombo gains access to aid-starved Eelam. But in June 2005, the Sri Lankan high court blocks an agreement to allow sharing of tsunami aid with the LTTE.",
                     "asset" : {
                         "media" : "./images/timeline/tsunami-debris.jpg",
                         "credit" : "JIMIN LAI/AFP/Getty Images",
@@ -238,18 +227,7 @@
                     "headline" : "Boxing Day tsunami kills 35,000 people"
                 },
                 {
-                    "startDate" : "2004",
-                    "endDate" : "2005,6",
-                    "text" : "The devastating tsunami gives Colombo access to aid-starved Eelam. But in June 2005, the Sri Lankan high court blocks an agreement to allow sharing of tsunami aid with the LTTE.",
-                    "asset" : {
-                        "media" : null,
-                        "credit" : null,
-                        "caption" : null
-                    },
-                    "headline" : "Tsunami opens Eelam up to Colombo aid"
-                },
-                {
-                    "startDate" : "2005",
+                    "startDate" : "2005,11,19",
                     "endDate" : null,
                     "text" : "Scandinavian peace monitors report thousands of treaty violations by both sides. Mahinda Rajapaksa campaigns for the presidency on a tough anti-LTTE ticket. The Tigers boycott the poll, effectively handing power to Rajapaksa.",
                     "asset" : {
@@ -271,9 +249,9 @@
                     "headline" : "Peace talks resume, then collapse"
                 },
                 {
-                    "startDate" : "2008,1,16",
+                    "startDate" : "2008,1",
                     "endDate" : null,
-                    "text" : "The ceasefire is officially terminated by the Rajapaksa government. The civil war resumes, with renewed vigour on the part of the China-backed government which progressively takes critical LTTE strongholds.",
+                    "text" : "The ceasefire is unilaterally terminated by the Rajapaksa government. The civil war resumes, with renewed vigour on the part of the China-backed government which progressively takes critical LTTE strongholds.",
                     "asset" : {
                         "media" : null,
                         "credit" : null,
@@ -290,7 +268,7 @@
                         "credit" : null,
                         "caption" : null
                     },
-                    "headline" : "Senior Tigers killed, ending the war"
+                    "headline" : "Tiger leadership killed, ending the war"
                 },
                 {
                     "startDate" : "2009",
@@ -301,10 +279,10 @@
                         "credit" : "LAKRUWAN WANNIARACHCHI/AFP/Getty Images",
                         "caption" : "Sri Lankan soldiers keep watch as Tamil students study at a camp for war-displaced Tamils in Vavuniya on February 23, 2009."
                     },
-                    "headline" : "500,000 refugees corrallaed in government-controlled camps"
+                    "headline" : "Some 500,000 refugees corralled in government-controlled camps"
                 },
                 {
-                    "startDate" : "2010,27,1",
+                    "startDate" : "2010,1,27",
                     "endDate" : null,
                     "text" : "Amid international allegations of war crimes, Rajapaksa is re-elected President in a landslide victory.",
                     "asset" : {
@@ -332,14 +310,14 @@
                     "asset" : {
                         "media" : "./images/timeline/un-protest.jpg",
                         "credit" : "Ishara S.KODIKARA/AFP/Getty Images",
-                        "caption" : "Sri Lankan demonstrators hold portraits of missing relatives during a protest outside the United nations office in Colombo on March 13, 2013."
+                        "caption" : "Sri Lankan demonstrators hold portraits of missing relatives during a protest outside the United Nations office in Colombo on March 13, 2013."
                     },
                     "headline" : "UNHCR urges war crimes inquiry"
                 },
                 {
                     "startDate" : "2013,4",
                     "endDate" : null,
-                    "text" : "Amnesty International accuses Sri Lanka of intensifying a crackdown on dissent, and urges Commonwealth leaders not to hold Head of Government Meeting (CHOGM) there unless the human-rights situation is improved. Sri Lanka rejects the allegations, claiming that a rehabilitation process is underway.",
+                    "text" : "Amnesty International accuses Sri Lanka of intensifying a crackdown on dissent, and urges Commonwealth leaders not to hold Head of Government Meeting (CHOGM) there unless the human rights situation is improved. Sri Lanka rejects the allegations, claiming that a rehabilitation process is underway.",
                     "asset" : {
                         "media" : null,
                         "credit" : null,
@@ -361,13 +339,14 @@
                 {
                     "startDate" : "2013,11,15",
                     "endDate" : "2013,11,17",
-                    "text" : "Though Canada has already declared it will not attend the CHOGM summit, citing Sri Lanka\u2019s poor human-rights record, Australia and Britain have plans to attend.",
+                    "text" : "Though Canada has already declared it will not attend the CHOGM summit, citing Sri Lanka\u2019s poor human rights record, Australia and Britain have plans to attend.",
                     "asset" : {
                         "media" : null,
                         "credit" : null,
                         "caption" : null
                     },
                     "headline" : "Australia plans to attend CHOGM in Colombo"
-                }]
+                }
+        ]
     }
 }
