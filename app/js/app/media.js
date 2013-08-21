@@ -13,15 +13,19 @@ define([
   var onBGImageLoad = function(element, callback) {
     var elementSrc = element
       .css('background-image');
-    if (!elementSrc || elementSrc === 'none') {
-      callback();
-    } else {
-      elementSrc = elementSrc.replace('url(', '').slice(0, -1);
+    if (elementSrc && elementSrc !== 'none') {
+      // Extract and clean the BG image source
+      elementSrc = elementSrc
+        .replace('url(', '')
+        .replace(')', '')
+        .replace(/"/g, '');
       var image = $('<img>')
         .attr('src', elementSrc);
       image.on('load', function() {
         callback(image[0]);
       });
+    } else {
+      callback();
     }
   };
 
