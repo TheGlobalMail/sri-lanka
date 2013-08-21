@@ -434,91 +434,89 @@ body {
     color: @orange;
     border-bottom: 1px solid transparent;
   }
+}
 
-  .pull-quote {
-    max-width: @contentParaWidth * 1.4;
-    margin: 0 auto 0.5em auto;
+.pull-quote {
+  max-width: @contentParaWidth * 1.4;
+  margin: 0 auto 0.5em auto;
+  padding: 0;
+  background-color: @white;
+  .border-radius(3px);
+  .clearfix;
+  > img {
+    margin-bottom: 1em;
+    .border-top-radius(3px);
+    .border-bottom-radius(3px);
+    &:last-of-type {
+      .border-bottom-radius(0);
+      margin-bottom: 0;
+    }
+  }
+
+  &.pull-right,
+  &.pull-left {
+    max-width: @contentParaWidth * .75;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  &.pull-right  { margin-right: 10%; }
+  &.pull-left   { margin-left: 10%; }
+
+  // big pullquote
+  &.text {
+    text-rendering: optimizeLegibility;
+    background-color: transparent;
+    .border-radius(0);
+    .box-shadow(none);
+    letter-spacing: .075em;
+    margin: 0 auto 1em auto;
     padding: 0;
-    background-color: @white;
-    .border-radius(3px);
-    .clearfix;
-    > img {
-      margin-bottom: 1em;
-      .border-top-radius(3px);
-      .border-bottom-radius(3px);
-      &:last-of-type {
-        .border-bottom-radius(0);
-        margin-bottom: 0;                
-      }
+    border-top: 1px dotted @orange;
+    border-bottom: 1px dotted @orange;
+    p {
+      font-size: 1.65em;
+      line-height: 1.5;
+      color: @darkOrange;
+      text-shadow: 0 -1px 0 @white;
+      font-family: @sansFontFamily;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-align: center;
+      padding: 1em;
+      margin-bottom: 0;
     }
+  }
+  &.large-image {
+    max-width: @contentParaWidth * 1.75;
+  }
+}
 
-    .paragraph-container {
-      border: 1px solid lighten(@brown, 70%);
-      border-top: none;
-      .border-bottom-radius(3px);
-      .clearfix;
+.paragraph-container {
+  border: 1px solid lighten(@brown, 70%);
+  border-top: none;
+  .border-bottom-radius(3px);
+  .clearfix;
 
-      p, .caption {
-        // .caption class so we can recycle this in the timeline
-        font-family: @sansFontFamily;
-        color: @gray;
-        max-width: 100%;
-        line-height: 1.5;
-        margin: 1em;
-        padding: 0em;
-        font-size: 0.65em;
-      }
+  p, .caption {
+    // .caption class so we can recycle this in the timeline
+    font-family: @sansFontFamily;
+    color: @gray;
+    max-width: 100%;
+    line-height: 1.5;
+    margin: 1em;
+    padding: 0em;
+    font-size: 0.65em;
+  }
 
-      .credit {
-        text-transform: uppercase; 
-        font-style: italic;
-        font-size: 11px;
-        line-height: 11px;
-        color: @grayLight;
-        display: block;
-        margin: 1em;
-        text-align: right;
-      }
-    }
-
-
-
-    &.pull-right,
-    &.pull-left {
-      max-width: @contentParaWidth * .75;
-      margin-left: 1em;
-      margin-right: 1em;
-    }
-    &.pull-right  { margin-right: 10%; }
-    &.pull-left   { margin-left: 10%; }
-
-    // big pullquote
-    &.text {
-      text-rendering: optimizeLegibility;
-      background-color: transparent;
-      .border-radius(0);
-      .box-shadow(none);
-      letter-spacing: .075em;
-      margin: 0 auto 1em auto;
-      padding: 0;
-      border-top: 1px dotted @orange;
-      border-bottom: 1px dotted @orange;
-      p {
-        font-size: 1.65em;
-        line-height: 1.5;
-        color: @darkOrange;
-        text-shadow: 0 -1px 0 @white;
-        font-family: @sansFontFamily;
-        text-transform: uppercase;
-        font-weight: 600;
-        text-align: center;
-        padding: 1em;
-        margin-bottom: 0;
-      }
-    }
-    &.large-image {
-      max-width: @contentParaWidth * 1.75;
-    }
+  .credit {
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 11px;
+    line-height: 11px;
+    color: @grayLight;
+    display: block;
+    margin: 1em;
+    text-align: right;
   }
 }
 
@@ -791,11 +789,11 @@ article {
 
             // captions
             .caption {
-              .content .pull-quote .paragraph-container .caption;
+              .paragraph-container .caption;
               margin: 0;
             }
             .credit {
-              .content .pull-quote .paragraph-container .credit;
+              .paragraph-container .credit;
               margin-left: 0;
               margin-right: 0;
             }

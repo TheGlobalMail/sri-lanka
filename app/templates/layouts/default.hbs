@@ -118,6 +118,13 @@
         <h3 class="author">{{{author}}}</h3>
         {{#if image}}
           <div class="image"></div>
+          {{#if imageCaption}}
+            <div class="paragraph-container">
+              <p>
+                {{imageCaption}}
+              </p>
+            </div>
+          {{/if}}
         {{/if}}
       </header>
       <section class="content">{{> body }}</section>
