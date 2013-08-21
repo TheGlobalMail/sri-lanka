@@ -4,29 +4,35 @@ define([
 ], function($, events) {
 
   var articleNav;
-  var content;
+  var article;
+  var headerImage
 
   var footerNav = function() {
     var footerNav = articleNav.clone();
     footerNav
       .removeClass('fixed')
       .addClass('footer');
-    content.append(footerNav);
+    article.append(footerNav);
   };
 
   var scaleToViewport = function() {
-//    $('.article-header').height(window.innerHeight);
+    if (article.hasClass('introduction')) {
+      $('.article-header').height(window.innerHeight * 0.7);
+    } else {
+      headerImage.height(window.innerHeight * 0.6);
+    }
   };
 
   var init = function() {
+    articleNav = $('.article-nav-container');
+
+    article = $('.main-article');
+    headerImage = article.find('.article-header .image');
+
     scaleToViewport();
+    footerNav();
 
     events.trigger('layout:complete');
-
-    articleNav = $('.article-nav-container');
-    content = $('.main-article');
-
-    footerNav();
   };
 
   return {
