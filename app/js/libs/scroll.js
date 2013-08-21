@@ -45,7 +45,7 @@ define([
 
   var offsetFromViewport = function(offset) {
     var position = {
-      in: false,
+      'in': false,
       out: false,
       above: false,
       below: false
@@ -63,7 +63,7 @@ define([
     var belowBottom = elementTop >= windowBottom;
 
     if (belowTop && aboveBottom) {
-      position.in = true;
+      position['in'] = true;
     } else {
       position.out = true;
       position.above = aboveTop;
@@ -81,7 +81,7 @@ define([
     var position = offsetFromViewport(offset);
 
     // Enter
-    if (position.in && !obj.inViewport) {
+    if (position['in'] && !obj.inViewport) {
       obj.inViewport = true;
       if (bindings.enter) {
         bindings.enter()
