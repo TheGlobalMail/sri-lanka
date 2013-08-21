@@ -429,8 +429,11 @@ body {
   }
 
   a {
-    color: @orange;
-    border-bottom: 1px solid transparent;
+    color: average(@orange, @brown);
+    &:hover {
+      border-bottom: 1px solid @trspOrange;
+      text-decoration: none;
+    }
   }
 }
 
@@ -684,6 +687,8 @@ article {
         }
       }
 
+      a { color: @white; }
+
       .pull-quote {
         p {
           color: @orange;
@@ -698,13 +703,12 @@ article {
       border-bottom-color: @trspOrange;
     }
 
-    .chapters {
-
+    .article-nav-container.footer .article-nav .article-nav-title {
+      color: @orange;
     }
-  }
-  &.monks-army {
 
   }
+
   &.timeline {
 
     .article-header {
