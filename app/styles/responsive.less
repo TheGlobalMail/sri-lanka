@@ -232,6 +232,13 @@
 		}
 	}
 
+	article.introduction .article-header .author {
+		&:before { display: none; }
+		.blockout {
+			background: transparent;
+		}
+	}
+
 	.content {
 		.font-size(16);
 		.pull-quote.text p { 
@@ -353,6 +360,37 @@
 		.brand {
 			display: none;
 		}	
+	}
+
+
+	.article-header {
+		.header {
+			letter-spacing: 0.4em;
+			word-spacing: 0;
+			font-size: 1.2em;
+		}
+		.byline {
+			font-size: 0.5em;
+		}
+
+		.author {
+			font-size: 0.5em;
+		}
+	}
+
+	article.introduction .article-header {
+		.header {
+			width: auto;
+			padding:0 40px;
+			top: 30%;
+		}
+		.byline {
+			// width: auto;
+			padding:0 0;
+			top: 60%;
+			font-size: 0.55em;
+			color: @white;
+		}
 	}
 
 }
