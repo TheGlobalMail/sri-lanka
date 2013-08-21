@@ -383,6 +383,18 @@ body {
     // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path_relative_to_the_HTML_file', sizingMethod='scale')";
     .box-shadow(0 0  1px @trspBlack);
     .border-radius(3px);
+    .introduction & {
+      .responsiveBG('headers/soldier-silhouetted');
+    }
+    .monks-army & {
+      .responsiveBG('headers/monks-rally');
+    }
+    .plight-of-the-tamils & {
+//      .responsiveBG('headers/');
+    }
+    .rajapaksa-inc & {
+//      .responsiveBG('headers/');
+    }
   }
 }
 
@@ -760,13 +772,31 @@ article {
   }
 }
 
+.responsive-image-container {
+  &.dancers {
+    .responsiveBGInArticle('story-image-lg/dancers');
+  }
+  &.monk-loudspeaker {
+    .responsiveBGInArticle('story-image-lg/monk-loudspeaker');
+  }
+  &.muslim-girls {
+    .responsiveBGInArticle('story-image-lg/muslim-girls');
+  }
+  &.pres-rajapaksa1 {
+    .responsiveBGInArticle('story-image-lg/pres-rajapaksa1');
+  }
+  &.pres-rajapaksa2 {
+    .responsiveBGInArticle('story-image-lg/pres-rajapaksa2');
+  }
+}
+
 body.loading {
   background: #333;
   overflow: hidden;
   #main,
   .navbar.special-feature,
   .article-nav-container {
-    display: none;
+    visibility: hidden;
   }
   .pre-load-background {
     display: block;

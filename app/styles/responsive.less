@@ -9,12 +9,23 @@
 @smlScreenMargin: 10px;
 
 .responsiveBG(@imgName) {
-  @imgBase: "/images/@{imgName}";
-  @media only screen and (min-width: @biggerWidth)  { background-image: url("@{imgBase}-5.jpg"); }
-  @media only screen and (max-width: @bigWidth)     { background-image: url("@{imgBase}-4.jpg"); }
-  @media only screen and (max-width: @medWidth)     { background-image: url("@{imgBase}-3.jpg"); }
-  @media only screen and (max-width: @smallWidth)   { background-image: url("@{imgBase}-2.jpg"); }
-  @media only screen and (max-width: @smallerWidth) { background-image: url("@{imgBase}-1.jpg"); }
+  @imgBase: "/images/@{imgName}-size";
+  // default to the largest image
+  background-image: url("@{imgBase}5.jpg");
+  //    @media only screen and (min-width: @biggerWidth)  { background-image: url("@{imgBase}5.jpg"); }
+  @media only screen and (max-width: @bigWidth)     { background-image: url("@{imgBase}4.jpg"); }
+  @media only screen and (max-width: @medWidth)     { background-image: url("@{imgBase}3.jpg"); }
+  @media only screen and (max-width: @smallWidth)   { background-image: url("@{imgBase}2.jpg"); }
+  @media only screen and (max-width: @smallerWidth) { background-image: url("@{imgBase}1.jpg"); }
+}
+
+.responsiveBGInArticle(@imgName) {
+  @imgBase: "/images/@{imgName}-size";
+  // default to the largest image
+  background-image: url("@{imgBase}4.jpg");
+  @media only screen and (max-width: @medWidth)     { background-image: url("@{imgBase}3.jpg"); }
+  @media only screen and (max-width: @smallWidth)   { background-image: url("@{imgBase}2.jpg"); }
+  @media only screen and (max-width: @smallerWidth) { background-image: url("@{imgBase}1.jpg"); }
 }
 
 // iPad Landscape & smaller screens
