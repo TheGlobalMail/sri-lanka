@@ -108,9 +108,46 @@
 		&.fixed {
 			height: auto;
 			padding: 10px 0;
+
+			.nav {
+				.article-nav {
+					.clearfix;
+					margin-bottom: 12px;
+					a {
+						border-right: 0 none;					
+					}
+					&:first-child a { border-left-width: 0; } 
+					&:last-child a { border-right-width: 0; } 
+
+					.article-nav-title {
+						margin: 0;
+						float: right;
+						width: 65%;
+						font-weight: bold;
+					}
+					.image {
+						width: 30%;
+						height: 60px;
+						float: left;
+					}
+					.overlay-coming-soon {
+						left: auto;
+						top: auto;
+						position: static;
+						float: right;
+						width: 65%;
+						text-align: left;
+						font-weight: 200;
+					}
+				}			
+			}
+
 		}
 		&.footer {
 			padding: 0 0 3em 0;
+			.article-nav .image {
+				height: 140px;
+			}
 		}
 
 		.nav-extra, .nav {
@@ -121,23 +158,37 @@
 		}
 
 		.about-the-series {
+			p {
+				padding-left: @medScreenMargin;
+				padding-right: @medScreenMargin;
+			}
 			.title {
 				text-align: center;
 			}
 		}
 
 		.nav {
-			margin-bottom: 1em;
-			li {
+			margin-bottom: 0;
+			.article-nav {
+				width: auto;
+				float: none;
+				padding: 0;
+				margin: 0 @medScreenMargin @medScreenMargin @medScreenMargin;
+				// border-bottom: 1px dotted @orange;
 				a {
-					border-right-style: solid;					
+					border-right: 0 none;					
 				}
 				&:first-child a { border-left-width: 0; } 
 				&:last-child a { border-right-width: 0; } 
+
+				.article-nav-title {
+					margin-bottom: 6px;
+				}
 			}			
 		}
 
 		.appendix {
+			margin: 0 @medScreenMargin;
 			li {
 				float: left;
 				padding: 0;
@@ -157,12 +208,7 @@
 				};
 			}
 
-			.title {
-				display: inline;
-				&:after {
-					content: ': ';
-				};
-			}
+			.title { display: none; }
 		}
 	} 
 
@@ -185,7 +231,6 @@
 			&:before { display: none; }
 		}
 	}
-
 
 	.content {
 		.font-size(16);
@@ -215,6 +260,7 @@
 			margin-bottom: 0.75em;
 		}
 	}
+
 	.next-chapter { 
 			max-width: none;
 			float: none;
@@ -288,10 +334,25 @@
 
 // Phones
 @media only screen and (max-width: @smallerWidth) {
-	.article-title-container {
-		.article-title {
-			display: none;
+	.navbar.special-feature {
+		.article-title-container {
+			width: 100%;
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0 10px 0 10px;
+			.article-title {
+				display: block;
+				float: left;
+				font-size: 1.2em;
+			}
+			.burger { 
+				float: right; 
+				margin-top: 6px;
+			}
 		}
+		.brand {
+			display: none;
+		}	
 	}
 
 }
