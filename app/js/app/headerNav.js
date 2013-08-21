@@ -46,6 +46,12 @@ define([
       exit: fadeInNavBarText,
       above: _.once(fadeInNavBarText)
     });
+
+    $(window).on('resize', _.debounce(function() {
+      if (!articleNav.hasClass('visible')) {
+        slideNavUp();
+      }
+    }, 75));
   };
 
   var init = function() {
