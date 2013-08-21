@@ -14,11 +14,15 @@ define([
     var elementSrc = element
       .css('background-image')
       .replace('url(', '').slice(0, -1);
-    var image = $('<img>')
-      .attr('src', elementSrc);
-    image.on('load', function() {
-      callback(image[0]);
-    });
+    if (!elementSrc) {
+      callback();
+    } else {
+      var image = $('<img>')
+        .attr('src', elementSrc);
+      image.on('load', function() {
+        callback(image[0]);
+      });
+    }
   };
 
   var detectHeaderImageLoaded = function() {
