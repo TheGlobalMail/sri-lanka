@@ -340,7 +340,7 @@ body {
   }
 
   .author {
-    font-size: 0.8em;
+    font-size: 0.7em;
     letter-spacing: .2em;
     line-height: 1.4em;
     color: @gray;
@@ -367,7 +367,7 @@ body {
       width: auto;
       display: inline-block;
       margin: 0 auto;
-      padding: 0 .9em;
+      padding: 0 .4em;
       background-color: @lightCream;
     }
   }
@@ -707,8 +707,12 @@ article {
 
   }
   &.timeline {
+
+    .article-header {
+      display: none;
+    }
     .content {
-      padding-top: 0;
+      padding-top: 1em;
       z-index: 1;
       margin-bottom: 2em;
 
@@ -774,8 +778,9 @@ article {
             .article-header .header;
           }
           .slider-item-container > .slider-item:first-child {
-            p {
+            .content .content-container .text p {
               .article-header .byline;
+              font-family: @sansFontFamily !important;
             }
           }
 
