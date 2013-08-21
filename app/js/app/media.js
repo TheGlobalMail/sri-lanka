@@ -12,11 +12,11 @@ define([
 
   var onBGImageLoad = function(element, callback) {
     var elementSrc = element
-      .css('background-image')
-      .replace('url(', '').slice(0, -1);
-    if (!elementSrc) {
+      .css('background-image');
+    if (!elementSrc || elementSrc === 'none') {
       callback();
     } else {
+      elementSrc = elementSrc.replace('url(', '').slice(0, -1);
       var image = $('<img>')
         .attr('src', elementSrc);
       image.on('load', function() {
