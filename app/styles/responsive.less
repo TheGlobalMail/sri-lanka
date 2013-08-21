@@ -407,7 +407,6 @@
 		}	
 	}
 
-
 	.article-header {
 		.header {
 			letter-spacing: 0.4em;
@@ -453,5 +452,13 @@
 		}
 	}
 
+}
 
+// FF specific
+@-moz-document url-prefix() {
+  @media only screen and (max-width: @smallerWidth) {
+    .navbar.special-feature .article-title-container .article-title {
+      margin-left: 10px * 2;
+    }
+  }
 }
