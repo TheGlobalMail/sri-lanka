@@ -203,9 +203,17 @@
 			margin-right: @medScreenMargin;
 			margin-bottom: 1em;
 		}
-		// .pull-quote.pull-right  { max-width: 300px; }
+		.pull-quote .paragraph-container {
+			& p, & .caption {
+				font-size: 0.8em;
+				margin: 0.5em 0.7em;
+			}
+		}
 
-		p { .font-size(16); }
+		p {
+			.font-size(16); 
+			margin-bottom: 0.75em;
+		}
 	}
 	.next-chapter { 
 			max-width: none;
@@ -213,6 +221,69 @@
 			margin-left: @medScreenMargin;
 			margin-right: @medScreenMargin;
 	}
+
+	.timeline {
+
+		.vco-notouch .vco-slider,
+		.vco-slider {
+
+			.vco-navigation {
+				.flag-content {
+					.thumbnail {
+						display: none;
+					}
+				}
+			}
+
+			.slider-item .content .content-container .text { 
+				width:100% !important;
+				max-width:100% !important;
+				min-width:100% !important;
+				display: block !important;
+			}
+			.slider-item {
+				width: 90% !important;
+				margin-left: 5%;
+			}
+			.slider-item .content .content-container {
+				display: block !important; 
+				width: 96% !important; 
+				margin-left: -120px;
+			}
+			.text .container {
+				width: 100% !important;
+			}
+			.media, 
+			.media-wrapper,
+			.media-container,
+			.media-shadow {
+				display: none !important
+			}
+
+			.nav-next, .nav-previous {
+				width: 5% !important;
+				.nav-container {
+					width: auto;
+				}
+				.date, .title { display: none;}
+				.icon {
+					margin: 0;
+				}
+				&:hover {
+					.icon {
+						margin: 0;
+					}					
+				};
+			}
+
+			.nav-next {
+				left: auto !important;
+				right: 0 !important;
+			}
+		}
+
+	}
+
 }
 
 // Phones

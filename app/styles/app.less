@@ -549,8 +549,8 @@ body {
       .pointer {
         display: inline-block;
         font-weight: 100;
-        font-size: 1.5em;
-        // color: @cream;
+        font-size: 1.4em;
+        padding-left: 10px;
         vertical-align: text-bottom;
       }
 
@@ -709,6 +709,51 @@ article {
     .content {
       padding-top: 0;
       z-index: 1;
+      margin-bottom: 2em;
+
+      .vco-storyjs { font-family: @sansFontFamily; }
+      .vco-storyjs .twitter,
+      .vco-storyjs .vcard,
+      .vco-storyjs .messege,
+      .vco-storyjs .credit,
+      .vco-storyjs .caption,
+      .vco-storyjs .zoom-in,
+      .vco-storyjs .zoom-out,
+      .vco-storyjs .back-home,
+      .vco-storyjs .time-interval div,
+      .vco-storyjs .time-interval-major div,
+      .vco-storyjs .nav-container { font-family: @sansFontFamily !important; }
+
+      .vco-storyjs .vco-feature .date { font-family: @sansFontFamily !important; }
+
+      .vco-storyjs .timenav h1,
+      .vco-storyjs .flag-content h1,
+      .vco-storyjs .era h1,
+      .vco-storyjs .timenav h2,
+      .vco-storyjs .flag-content h2,
+      .vco-storyjs .era h2,
+      .vco-storyjs .timenav h3,
+      .vco-storyjs .flag-content h3,
+      .vco-storyjs .era h3,
+      .vco-storyjs .timenav h4,
+      .vco-storyjs .flag-content h4,
+      .vco-storyjs .era h4,
+      .vco-storyjs .timenav h5,
+      .vco-storyjs .flag-content h5,
+      .vco-storyjs .era h5,
+      .vco-storyjs .timenav h6,
+      .vco-storyjs .flag-content h6,
+      .vco-storyjs .era h6 { font-family: @sansFontFamily !important; }
+
+      .vco-storyjs .vco-feature h1,
+      .vco-storyjs .vco-feature h2,
+      .vco-storyjs .vco-feature h3,
+      .vco-storyjs .vco-feature h4,
+      .vco-storyjs .vco-feature h5,
+      .vco-storyjs .vco-feature h6 { font-family: @serifFontFamily }
+
+      .timeline-tooltip { font-family: @sansFontFamily; }
+
       .vco-storyjs {
 
         // basics
@@ -728,38 +773,62 @@ article {
             .article-header .header;
           }
           .slider-item-container > .slider-item:first-child {
-            // display: block !important;
             p {
               .article-header .byline;
             }
           }
 
-          // image & caption styling
+          // image styling
           .slider-item .content .content-container .media .media-wrapper .media-container {
-            background-color: @white;
-            box-shadow: 0 0 1px @trspBlack;
-            .border-radius(3px);
-            .media-shadow {
-              &:before, &:after { display: none; }
-            }
+            .media-shadow { &:before, &:after { display: none; } }
 
             .media-image {
-              border: none;
-              &:first-child {
-                .border-top-radius(3px);                
-              }
+              border: 1px solid lighten(@brown, 70%);
+              .border-radius(3px);  
+              background: transparent;              
             }
 
             // captions
             .caption {
               .content .pull-quote .paragraph-container .caption;
-              margin-top: 0;
+              margin: 0;
             }
             .credit {
               .content .pull-quote .paragraph-container .credit;
+              margin-left: 0;
+              margin-right: 0;
+            }
+          }
+
+          // text styling
+          .slider-item .content .content-container .text {
+            .font-size(@parFontSize);
+            .date {
+              text-transform: uppercase;
+              color: @grayLight;
+              font-size: .6em;
+              letter-spacing: .2em;
+              font-weight: bold;
             }
 
+            h3 {
+              font-family: @sansFontFamily;
+              font-size: 1em;
+              line-height: 1.2;
+              font-weight: 700;
+              letter-spacing: .1em;
+              text-transform: uppercase;
+              color: @gray;
+            }
+
+            p {
+              color: #333;
+              font-family: @serifFontFamily !important; // ugh
+              font-size: 1em;
+              line-height: 1.5;
+            }
           }
+
         }
       } // /.vco-storyjs
     }
