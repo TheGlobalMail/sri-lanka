@@ -77,8 +77,8 @@ module.exports = function(grunt) {
 
       // Assemble templates
       assemble: {
-        files: ['<%= project.app %>/*.hbs','<%= project.app %>/{,*/ }*.json'],
-        tasks: ['assemble:dist']
+        files: ['<%= project.app %>/templates/{layouts,pages}/*.hbs'],
+        tasks: ['assemble']
       },
 
       /* When any main assets in `project.app` change we should reload the browser
