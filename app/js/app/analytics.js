@@ -2,8 +2,9 @@ define([
   'jquery',
   'lodash',
   'events',
-  'utils'
-],function($, _, events, utils) {
+  'utils',
+  'config'
+],function($, _, events, utils, config) {
 
   var articleName = location.pathname.split('/')[1] || 'introduction';
 
@@ -18,6 +19,9 @@ define([
     _.each(pointsToTrack, function(percentage) {
       if (scrollPercentage >= percentage) {
         var eventName = 'Read to ' + percentage + '%';
+        if (config.debugAnalytics) {
+          console.log('_trackEvent', 'Read to: ' + articleName, eventName);
+        }
         window._gaq && _gaq.push(['_trackEvent', 'Read to: ' + articleName, eventName]);
         delete pointsToTrack[eventName];
       }
