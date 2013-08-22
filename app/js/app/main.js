@@ -6,8 +6,9 @@ define([
   './templates',
   './headerNav',
   './media',
+  './analytics',
   'scroll'
-], function(_, events, layout, timeline, templates, headerNav, media, scroll) {
+], function(_, events, layout, timeline, templates, headerNav, media, analytics, scroll) {
   'use strict';
 
   var body;
@@ -39,6 +40,7 @@ define([
     templates.init();
     headerNav.init();
     scroll.init();
+    analytics.init();
   };
 
   return {

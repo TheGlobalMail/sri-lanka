@@ -4,6 +4,7 @@ require.config({
     lodash: '../components/lodash/lodash',
     config: './config',
     events: './libs/events',
+    utils: './libs/utils',
     fatcontroller: './libs/fatcontroller',
     scrollTo: '../components/jquery.scrollTo/jquery.scrollTo',
     easing: '../components/jquery-easing/jquery.easing',
