@@ -13,7 +13,6 @@ define([
     pointsToTrack['Read to ' + percentage + '%'] = percentage;
   });
 
-
   var logScrollTracking = function() {
     var scrollPercentage = ((utils.getScrollY() + window.innerHeight) / document.height) * 100;
     _.each(pointsToTrack, function(percentage) {
