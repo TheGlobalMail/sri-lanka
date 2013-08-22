@@ -18,7 +18,7 @@
                     "headline" : "Ceylon gains independence"
                 },
                 {
-                    "startDate" : "1956,4,12",
+                    "startDate" : "1956,4",
                     "endDate" : null,
                     "text" : "Solomon Bandaranaike\u2019s populist Sri Lanka Freedom Party wins government after campaigning on a majoritarian Sinhalese Buddhist ticket.  ",
                     "asset" : {
@@ -139,7 +139,7 @@
                     "headline" : "Indian 'peace keeping' begins - creating another war "
                 },
                 {
-                    "startDate" : "1987,11,14",
+                    "startDate" : "11/14/1987",
                     "endDate" : null,
                     "text" : "The 13th Amendment to the Sri Lankan constitution enshrines Tamil as an official language. The Marxist-Leninist People\u2019s Liberation Front begins another insurrection in the Sinhalese south, starting a civil war within a civil war.",
                     "asset" : {
@@ -161,8 +161,8 @@
                     "headline" : "Tiger assassinates Indian PM Gandhi"
                 },
                 {
-                    "startDate" : "1993,5,1",
-                    "endDate" : "1993,5,1",
+                    "startDate" : "05/01/1993",
+                    "endDate" : null,
                     "text" : "Sri Lankan President Ranasinghe Premadasa is assassinated by an LTTE suicide bomber in Colombo.",
                     "asset" : {
                         "media" : "./images/timeline/premadasa-funeral.jpg",
@@ -207,7 +207,7 @@
                 {
                     "startDate" : "2004,3",
                     "endDate" : null,
-                    "text" : "The LTTE\u2019s eastern commander Colonel Karuna breaks with the movement's northern leadership, splitting the Tigers in half.",
+                    "text" : "The LTTE\u2019s eastern commander Colonel Karuna splits the Tigers by breaking with the movement's northern leadership, renouncing terrorism and siding with the Colombo government.",
                     "asset" : {
                         "media" : "./images/timeline/beach-lanterns.jpg",
                         "credit" : "PRAKASH SINGH/AFP/Getty Images",
@@ -218,7 +218,7 @@
                 {
                     "startDate" : "2004,12,26",
                     "endDate" : null,
-                    "text" : "The Boxing Day tsunami devastates the island, killing 35,000 people. Disputes simmer between the Tigers and the government over international aid, as Colombo gains access to aid-starved Eelam. But in June 2005, the Sri Lankan high court blocks an agreement to allow sharing of tsunami aid with the LTTE.",
+                    "text" : "The Boxing Day tsunami devastates the island, killing 35,000 people and making 2.5 million people homeless. Disputes over relief efforts simmer between the Tigers and the government, as Colombo gains access to aid-starved Eelam. But in June 2005, the Sri Lankan high court blocks an agreement to allow sharing of tsunami aid with the LTTE.",
                     "asset" : {
                         "media" : "./images/timeline/tsunami-debris.jpg",
                         "credit" : "JIMIN LAI/AFP/Getty Images",
@@ -227,9 +227,9 @@
                     "headline" : "Boxing Day tsunami kills 35,000 people"
                 },
                 {
-                    "startDate" : "2005,11,19",
+                    "startDate" : "2005,11,17",
                     "endDate" : null,
-                    "text" : "Scandinavian peace monitors report thousands of treaty violations by both sides. Mahinda Rajapaksa campaigns for the presidency on a tough anti-LTTE ticket. The Tigers boycott the poll, effectively handing power to Rajapaksa.",
+                    "text" : "Mahinda Rajapaksa campaigns for the presidency on a tough anti-LTTE ticket. The Tigers boycott the poll, effectively handing power to Rajapaksa. Scandinavian peace monitors report thousands of treaty violations by both sides during the ceasefire period.",
                     "asset" : {
                         "media" : null,
                         "credit" : null,

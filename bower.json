@@ -10,7 +10,7 @@
     "font-awesome": "~3.2.1",
     "jquery.scrollTo": "~1.4.5",
     "jquery-easing": "~1.3.0",
-    "timelinejs": "~2.11.1",
+    "timelinejs": "https://github.com/VeriteCo/TimelineJS/archive/v2.25.tar.gz",
     "handlebars": "~1.0.0",
     "requirejs-plugins": "~1.0.2"
   },
