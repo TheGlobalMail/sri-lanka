@@ -338,9 +338,9 @@ module.exports = function(grunt) {
         layout: '<%= project.app %>/templates/layouts/default.hbs'
       },
       pages: {
-          files: {
-              '<%= project.app %>/': ['<%= project.app %>/templates/pages/*.hbs']
-          }
+        files: {
+          '<%= project.app %>/': ['<%= project.app %>/templates/pages/*.hbs']
+        }
       }
     }
   });
