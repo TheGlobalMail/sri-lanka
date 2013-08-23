@@ -395,6 +395,7 @@ body {
     }
     .smugglers-prey & {
       .responsiveBG('headers/gnanaseelan');
+      background-position: center 12%;
     }
     .rajapaksa-inc & {
 //      .responsiveBG('headers/');
@@ -496,14 +497,13 @@ body {
     max-width: @contentParaWidth * 1.75;
   }
   &.jaffna-map {
-    border: 1px solid lighten(@brown, 70%);
-    .paragraph-container {
-      border: 0px none; 
-    }
+    border: 1px solid lighten(@brown, 70%) !important;
+    .paragraph-container { border: 0px none; }
   }
 }
 
 .paragraph-container {
+  background: @white;
   border: 1px solid lighten(@brown, 70%);
   border-top: none;
   .border-bottom-radius(3px);
