@@ -3,19 +3,19 @@ define([
   'events',
   './layout',
   './timeline',
-  './templates',
   './headerNav',
+  './map',
   './media',
   './analytics',
   'scroll'
-], function(_, events, layout, timeline, templates, headerNav, media, analytics, scroll) {
+], function(_, events, layout, timeline, headerNav, map, media, analytics, scroll) {
   'use strict';
 
   var body;
 
   var removeLoadingState = function() {
-    events.trigger('loading:complete');
     body.removeClass('loading');
+    events.trigger('loading:complete');
   };
 
   var setBindings = function() {
@@ -37,8 +37,8 @@ define([
     layout.init();
     timeline.init();
     media.init();
-    templates.init();
     headerNav.init();
+    map.init();
     scroll.init();
     analytics.init();
   };

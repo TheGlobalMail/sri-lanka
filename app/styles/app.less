@@ -4,6 +4,10 @@
 @parFontSizePx: 20px;
 @contentParaWidth: 620px;
 
+@fixedArticleNavHeight: 180px;
+@navbarHeight: 48px;
+@fixedArticleNavPaddingTop: 20px;
+
 @orange:      rgb(253, 137, 57);
 @trspOrange:  rgba(253, 137, 57, 0.3);
 @darkOrange:  darken(@orange, 15%);
@@ -82,9 +86,6 @@ body {
 
 .article-nav-container {
   text-align: left;
-  @fixedArticleNavHeight: 180px;
-  @navbarHeight: 48px;
-  @fixedArticleNavPaddingTop: 20px;
   .clearfix;
   &.fixed {
     background-color: @trspDarkBrown;
@@ -196,6 +197,8 @@ body {
       &:first-child {
         padding: 0;
       }
+    .desktop-label { display: inline; }
+    .mobile-label { display: none; }
     }
   }
   .overlay-anchor,
@@ -205,7 +208,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    // this SO thread explains the data URI below (it's a 1x1 transparent GIF:
+    // this SO thread explains the data URI below (it's a 1x1 transparent GIF):
     // http://stackoverflow.com/questions/9109911/ie-z-index-trouble-on-element-with-transparent-background    
     background: transparent 0 0 repeat scroll url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBR‌​AA7");
   }
@@ -256,7 +259,7 @@ body {
       background-image: url('/images/chap-navs/monks-rally-chapnav.jpg');
     }
     .plight-of-the-tamils& {
-      background-image: url('/images/chap-navs/billboard-chapnav-bw.jpg');
+      background-image: url('/images/chap-navs/billboard-chapnav.jpg');
     }
     .rajapaksa-inc& {
       background-image: url('/images/chap-navs/g-rajapaksa-chapnav-bw.jpg');
@@ -393,8 +396,9 @@ body {
     .monks-army & {
       .responsiveBG('headers/monks-rally');
     }
-    .plight-of-the-tamils & {
-//      .responsiveBG('headers/');
+    .smugglers-prey & {
+      .responsiveBG('headers/gnanaseelan');
+      background-position: center 12%;
     }
     .rajapaksa-inc & {
 //      .responsiveBG('headers/');
@@ -494,10 +498,25 @@ body {
   }
   &.large-image {
     max-width: @contentParaWidth * 1.75;
+    margin-bottom: 1em;
+  }
+  &.jaffna-map {
+    border: 1px solid lighten(@brown, 70%) !important;
+    .paragraph-container { border: 0px none; }
   }
 }
 
+#jaffna-map {
+  display: block; 
+  content: " "; 
+  margin-top: -1 * (@navbarHeight + @fixedArticleNavPaddingTop);
+  height: (@navbarHeight + @fixedArticleNavPaddingTop); 
+  visibility: hidden; 
+}
+
+
 .paragraph-container {
+  background: @white;
   border: 1px solid lighten(@brown, 70%);
   border-top: none;
   .border-bottom-radius(3px);
@@ -877,6 +896,20 @@ article {
   &.pres-rajapaksa2 {
     .responsiveBGInArticle('story-image-lg/pres-rajapaksa2');
   }
+  &.family {
+    .responsiveBGInArticle('story-image-lg/family');
+  }
+  &.ravi {
+    .responsiveBGInArticle('story-image-lg/ravi');
+  }
+  &.jaffna-street {
+    .responsiveBGInArticle('story-image-lg/jaffna-street');
+  }
+  &.gnanaseelan {
+    .responsiveBGInArticle('story-image-lg/gnanaseelan');
+  }
+
+
 }
 
 body.loading {
