@@ -19,7 +19,7 @@ define([
     if (article.hasClass('introduction')) {
       $('.article-header').height(window.innerHeight * 0.7);
     } else {
-      headerImage.height(window.innerHeight * 0.6);
+      headerImage.height(window.innerHeight * 0.7);
     }
   };
 
