@@ -388,10 +388,18 @@ body {
     background-size: cover;
     // IE8 polyfill for `background-size: cover;`
     // -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='path_relative_to_the_HTML_file', sizingMethod='scale')";
-    .box-shadow(0 0  1px @trspBlack);
+    .box-shadow(0 0 1px @trspBlack);
     .border-radius(3px);
+    max-width: @contentParaWidth * 2.5;
+    margin: 0 auto;
+    left: auto;
+    top: auto;
+
     .introduction & {
       .responsiveBG('headers/soldier-silhouetted');
+      max-width: none;
+      top: 0;
+      left: 0;
     }
     .monks-army & {
       .responsiveBG('headers/monks-rally');
@@ -403,6 +411,11 @@ body {
     .rajapaksa-inc & {
 //      .responsiveBG('headers/');
     }
+  }
+  .paragraph-container {
+    max-width: @contentParaWidth * 2.5;
+    margin: 0 auto;
+    box-sizing: border-box;    
   }
 }
 
