@@ -3,7 +3,6 @@ define([
   'events',
   './layout',
   './timeline',
-  './templates',
   './headerNav',
   './media',
   './analytics',
@@ -37,7 +36,6 @@ define([
     layout.init();
     timeline.init();
     media.init();
-    templates.init();
     headerNav.init();
     scroll.init();
     analytics.init();
