@@ -196,6 +196,8 @@ body {
       &:first-child {
         padding: 0;
       }
+    .desktop-label { display: inline; }
+    .mobile-label { display: none; }
     }
   }
   .overlay-anchor,
@@ -495,6 +497,7 @@ body {
   }
   &.large-image {
     max-width: @contentParaWidth * 1.75;
+    margin-bottom: 1em;
   }
   &.jaffna-map {
     border: 1px solid lighten(@brown, 70%) !important;
