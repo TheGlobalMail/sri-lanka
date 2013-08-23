@@ -4,6 +4,10 @@
 @parFontSizePx: 20px;
 @contentParaWidth: 620px;
 
+@fixedArticleNavHeight: 180px;
+@navbarHeight: 48px;
+@fixedArticleNavPaddingTop: 20px;
+
 @orange:      rgb(253, 137, 57);
 @trspOrange:  rgba(253, 137, 57, 0.3);
 @darkOrange:  darken(@orange, 15%);
@@ -82,9 +86,6 @@ body {
 
 .article-nav-container {
   text-align: left;
-  @fixedArticleNavHeight: 180px;
-  @navbarHeight: 48px;
-  @fixedArticleNavPaddingTop: 20px;
   .clearfix;
   &.fixed {
     background-color: @trspDarkBrown;
@@ -504,6 +505,15 @@ body {
     .paragraph-container { border: 0px none; }
   }
 }
+
+#jaffna-map {
+  display: block; 
+  content: " "; 
+  margin-top: -1 * (@navbarHeight + @fixedArticleNavPaddingTop);
+  height: (@navbarHeight + @fixedArticleNavPaddingTop); 
+  visibility: hidden; 
+}
+
 
 .paragraph-container {
   background: @white;

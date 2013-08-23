@@ -30,7 +30,7 @@ define([
   };
 
   var init = function() {
-    jaffnaMap = $('#jaffna-map');
+    jaffnaMap = $('#jaffna-map-wrapper');
     navbar = $('.navbar');
     setBindings();
   };
