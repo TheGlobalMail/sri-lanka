@@ -304,7 +304,7 @@ module.exports = function(grunt) {
 
       staging: {
         src: ['<%= cdn.dist.src %>'],
-        cdn: 'http://sri-lanka-staging-assets.theglobalmail.org'
+        cdn: 'http://sri-lanka-staging.theglobalmail.org'
       }
     },
 
