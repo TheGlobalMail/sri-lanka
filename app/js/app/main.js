@@ -4,17 +4,18 @@ define([
   './layout',
   './timeline',
   './headerNav',
+  './map',
   './media',
   './analytics',
   'scroll'
-], function(_, events, layout, timeline, templates, headerNav, media, analytics, scroll) {
+], function(_, events, layout, timeline, headerNav, map, media, analytics, scroll) {
   'use strict';
 
   var body;
 
   var removeLoadingState = function() {
-    events.trigger('loading:complete');
     body.removeClass('loading');
+    events.trigger('loading:complete');
   };
 
   var setBindings = function() {
@@ -37,6 +38,7 @@ define([
     timeline.init();
     media.init();
     headerNav.init();
+    map.init();
     scroll.init();
     analytics.init();
   };
