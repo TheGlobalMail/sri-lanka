@@ -57,7 +57,11 @@
     <a href="http://www.theglobalmail.org/" class="brand" title="Go to The Global Mail">The Global Mail</a>
     <div class="article-title-container">
       <span class="article-title">
-        {{#if pageTitle}}{{pageTitle}}{{else}}{{header}}{{/if}}
+        {{#if pageTitle}}
+          {{pageTitle}}
+        {{else}}
+          {{header}}
+        {{/if}}
       </span>
       <i class="icon-reorder burger"></i>
     </div>
@@ -76,9 +80,7 @@
     <div class="about-the-series nav-extra">
       <a class="overlay-anchor" href="/"></a>
       <p class="title">How Not To Win A War</p>
-      <p>
-        The prayer leaders, people-smugglers and power players putting Sri Lanka's post-war paradise at risk.
-      </p>
+      <p>The prayer leaders, people-smugglers and power players putting Sri Lanka's post-war paradise at risk.</p>
     </div>
     <ul class="nav">
       <li class="article-nav monks-army">
@@ -91,13 +93,10 @@
         <div class="image"></div>
         <a class="overlay-anchor" href="/smugglers-prey"></a>
       </li>
-      <li class="article-nav rajapaksa-inc inactive">
+      <li class="article-nav brothers-grip">
         <span class="article-nav-title">The Brothers&rsquo; Grip</span>
         <div class="image"></div>
-        <div class="overlay-coming-soon">
-          Coming Soon
-        </div>
-        <!-- <class="overlay-anchor" href="#"></a> -->
+        <a class="overlay-anchor" href="/brothers-grip"></a>
       </li>
     </ul>
     <ul class="appendix nav-extra">
@@ -123,7 +122,7 @@
         <h1 class="header">{{{header}}}</h1>
         <h2 class="byline">{{{byline}}}</h2>
         <h3 class="author">{{{author}}}</h3>
-        {{#if image}}
+        {{#unless hideHeaderImage}}
           <div class="image"></div>
           {{#if imageCaption}}
             <div class="paragraph-container">
@@ -132,7 +131,7 @@
               </p>
             </div>
           {{/if}}
-        {{/if}}
+        {{/unless}}
       </header>
       <section class="content">{{> body }}</section>
       <section class="next-chapter">{{{next-chapter}}}</section>

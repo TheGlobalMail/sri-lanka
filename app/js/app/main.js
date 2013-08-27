@@ -1,6 +1,7 @@
 define([
   'lodash',
   'events',
+  './content',
   './layout',
   './timeline',
   './headerNav',
@@ -8,10 +9,11 @@ define([
   './media',
   './analytics',
   'scroll'
-], function(_, events, layout, timeline, headerNav, map, media, analytics, scroll) {
+], function(_, events, content, layout, timeline, headerNav, map, media, analytics, scroll) {
   'use strict';
 
   var body;
+  var tgm = window.tgm || {};
 
   var removeLoadingState = function() {
     body.removeClass('loading');
@@ -23,6 +25,12 @@ define([
       'layout:complete',
       'media:loaded'
     ];
+
+    // If we need to fetch content, delay until it has been inserted
+    if (tgm.articleSource) {
+      loadingStateUntil.push('content:complete');
+    }
+
     var loadingStageComplete = _.after(loadingStateUntil.length, removeLoadingState);
     _.each(loadingStateUntil, function(eventName) {
       events.on(eventName, loadingStageComplete);
@@ -34,6 +42,7 @@ define([
 
     setBindings();
 
+    content.init();
     layout.init();
     timeline.init();
     media.init();
