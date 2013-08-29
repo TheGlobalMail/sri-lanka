@@ -76,6 +76,12 @@
 			font-size: 1em;
 			font-weight: bold;
 		}
+
+		&.fixed .appendix {
+			.mobile-label { display: inline; }
+			.desktop-label { display: none; }
+
+		}
 	}
 
 	.article-header .image {
@@ -153,17 +159,14 @@
 					padding: 0;
 					border: 0 none;
 					a {
-						display: inline-block;
-						margin-bottom: 12px;
-						border: 0 none;
 						background: @trspOrange;
+						display: inline-block;
+						border: 0 none;
 						line-height: 1;
 						padding: 8px 6px;
-						margin-right: 8px;
+						margin: 0 8px 8px 0;
 						.border-radius(3px);
 					}
-				    .mobile-label { display: inline; }
-				    .desktop-label { display: none; }
 					&:first-child {
 						display: none;
 					};

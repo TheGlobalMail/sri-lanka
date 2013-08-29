@@ -260,9 +260,11 @@ body {
     }
     .plight-of-the-tamils& {
       background-image: url('/images/chap-navs/billboard-chapnav.jpg');
+      background-position: center 90%;
     }
-    .brothers-grip& {
+    .brothers-army& {
       background-image: url('/images/chap-navs/g-rajapaksa-chapnav.jpg');
+      background-position: center 80%;
     }
   }
 
@@ -409,7 +411,7 @@ body {
       .responsiveBG('headers/gnanaseelan');
       background-position: center 12%;
     }
-    .brothers-grip & {
+    .brothers-army & {
       background-image: url('/images/6.jpg');
 //      .responsiveBG('headers/');
     }
@@ -515,9 +517,14 @@ body {
     max-width: @contentParaWidth * 1.75;
     margin-bottom: 1em;
   }
-  &.jaffna-map {
+  &.jaffna-map, &.family-ties {
     border: 1px solid lighten(@brown, 70%) !important;
     .paragraph-container { border: 0px none; }
+  }
+  &.family-ties {
+    max-width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
