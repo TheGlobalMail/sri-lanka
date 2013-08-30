@@ -125,7 +125,9 @@
       <header class="article-header">
         <h1 class="header">{{{header}}}</h1>
         <h2 class="byline">{{{byline}}}</h2>
-        <h3 class="author">{{{author}}}</h3>
+        {{#if author}}
+          <h3 class="author">{{{author}}}</h3>
+        {{/if}}
         {{#unless hideHeaderImage}}
           <div class="image"></div>
           {{#if imageCaption}}
