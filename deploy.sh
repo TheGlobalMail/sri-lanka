@@ -15,6 +15,7 @@ if [ $target == "staging" ] ; then
   s3cmd -P -m text/html put dist/timeline.html s3://sri-lanka-staging.theglobalmail.org/timeline
   s3cmd -P -m text/html put dist/smugglers-prey.html s3://sri-lanka-staging.theglobalmail.org/smugglers-prey
   s3cmd -P -m text/html put dist/brothers-grip.html s3://sri-lanka-staging.theglobalmail.org/brothers-grip
+  s3cmd -P -m text/html put dist/family.html s3://sri-lanka-staging.theglobalmail.org/family
   grunt clean:dist
 fi
 if [ $target == "production" ] ; then
@@ -25,5 +26,6 @@ if [ $target == "production" ] ; then
   s3cmd -P -m text/html put dist/timeline.html s3://sri-lanka.theglobalmail.org/timeline
   s3cmd -P -m text/html put dist/smugglers-prey.html s3://sri-lanka.theglobalmail.org/smugglers-prey
   s3cmd -P -m text/html put dist/brothers-grip.html s3://sri-lanka.theglobalmail.org/brothers-grip
+  s3cmd -P -m text/html put dist/family.html s3://sri-lanka.theglobalmail.org/family
   grunt clean:dist
 fi
