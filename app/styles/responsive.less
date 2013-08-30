@@ -8,24 +8,24 @@
 @medScreenMargin: 20px;
 @smlScreenMargin: 10px;
 
-.responsiveBG(@imgName) {
+.responsiveBG(@imgName, @extension: 'jpg') {
   @imgBase: "/images/@{imgName}-size";
   // default to the largest image
-  background-image: url("@{imgBase}5.jpg");
+  background-image: url("@{imgBase}5.@{extension}");
   //    @media only screen and (min-width: @biggerWidth)  { background-image: url("@{imgBase}5.jpg"); }
-  @media only screen and (max-width: @bigWidth)     { background-image: url("@{imgBase}4.jpg"); }
-  @media only screen and (max-width: @medWidth)     { background-image: url("@{imgBase}3.jpg"); }
-  @media only screen and (max-width: @smallWidth)   { background-image: url("@{imgBase}2.jpg"); }
-  @media only screen and (max-width: @smallerWidth) { background-image: url("@{imgBase}1.jpg"); }
+  @media only screen and (max-width: @bigWidth)     { background-image: url("@{imgBase}4.@{extension}"); }
+  @media only screen and (max-width: @medWidth)     { background-image: url("@{imgBase}3.@{extension}"); }
+  @media only screen and (max-width: @smallWidth)   { background-image: url("@{imgBase}2.@{extension}"); }
+  @media only screen and (max-width: @smallerWidth) { background-image: url("@{imgBase}1.@{extension}"); }
 }
 
-.responsiveBGInArticle(@imgName) {
+.responsiveBGInArticle(@imgName, @extension: 'jpg') {
   @imgBase: "/images/@{imgName}-size";
   // default to the largest image
-  background-image: url("@{imgBase}4.jpg");
-  @media only screen and (max-width: @medWidth)     { background-image: url("@{imgBase}3.jpg"); }
-  @media only screen and (max-width: @smallWidth)   { background-image: url("@{imgBase}2.jpg"); }
-  @media only screen and (max-width: @smallerWidth) { background-image: url("@{imgBase}1.jpg"); }
+  background-image: url("@{imgBase}4.@{extension}");
+  @media only screen and (max-width: @medWidth)     { background-image: url("@{imgBase}3.@{extension}"); }
+  @media only screen and (max-width: @smallWidth)   { background-image: url("@{imgBase}2.@{extension}"); }
+  @media only screen and (max-width: @smallerWidth) { background-image: url("@{imgBase}1.@{extension}"); }
 }
 
 // iPad Landscape & smaller screens
