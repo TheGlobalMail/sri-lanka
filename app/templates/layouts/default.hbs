@@ -130,6 +130,11 @@
           <div class="image"></div>
           {{#if imageCaption}}
             <div class="paragraph-container">
+              {{#if imageCredit}}
+                <p class="credit">
+                  {{imageCredit}}
+                </p>
+              {{/if}}
               <p>
                 {{imageCaption}}
               </p>
