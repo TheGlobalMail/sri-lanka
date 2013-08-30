@@ -57,13 +57,17 @@
     <a href="http://www.theglobalmail.org/" class="brand" title="Go to The Global Mail">The Global Mail</a>
     <div class="article-title-container">
       <span class="article-title">
-        {{#if pageTitle}}{{pageTitle}}{{else}}{{header}}{{/if}}
+        {{#if pageTitle}}
+          {{pageTitle}}
+        {{else}}
+          {{header}}
+        {{/if}}
       </span>
       <i class="icon-reorder burger"></i>
     </div>
     <div class="special-feature-misc">
       <div class="share-button twitter">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="TheGlobalMail" data-hashtags="auspol">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="TheGlobalMail" data-hashtags="srilanka">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
       <div class="share-button facebook">
@@ -76,9 +80,7 @@
     <div class="about-the-series nav-extra">
       <a class="overlay-anchor" href="/"></a>
       <p class="title">How Not To Win A War</p>
-      <p>
-        The prayer leaders, people-smugglers and power players putting Sri Lanka's post-war paradise at risk.
-      </p>
+      <p>The prayer leaders, people-smugglers and power players putting Sri Lanka's post-war paradise at risk.</p>
     </div>
     <ul class="nav">
       <li class="article-nav monks-army">
@@ -86,27 +88,35 @@
         <div class="image"></div>
         <a class="overlay-anchor" href="/monks-army"></a>
       </li>
-      <li class="article-nav plight-of-the-tamils inactive">
+      <li class="article-nav plight-of-the-tamils">
         <span class="article-nav-title">The Smugglers&rsquo; Prey</span>
         <div class="image"></div>
-        <div class="overlay-coming-soon">
-          Coming Soon
-        </div>
-        <a class="overlay-anchor" href="#"></a>
+        <a class="overlay-anchor" href="/smugglers-prey"></a>
       </li>
-      <li class="article-nav rajapaksa-inc inactive">
+      <li class="article-nav brothers-grip">
         <span class="article-nav-title">The Brothers&rsquo; Grip</span>
         <div class="image"></div>
-        <div class="overlay-coming-soon">
-          Coming Soon
-        </div>
-        <a class="overlay-anchor" href="#"></a>
+        <a class="overlay-anchor" href="/brothers-grip"></a>
       </li>
     </ul>
     <ul class="appendix nav-extra">
       <li><p class="title">Additional Media</p></li>
-      <li><a href="/timeline"><i class="icon-calendar"></i> Timeline</a></li>
-      <!--<li><a href="#"><i class="icon-flag-alt"></i> Map</a></li>-->
+      <li><a href="/timeline"><i class="icon-calendar"></i>
+        <span class="desktop-label">Sri Lanka Timeline</span>
+        <span class="mobile-label">Timeline</span>
+      </a></li>
+      <li><a href="/smugglers-prey#jaffna-map"><i class="icon-flag"></i>
+        <span class="desktop-label">Jaffna Peninsula Map</span>
+        <span class="mobile-label">Map</span>
+      </a></li>
+      <li><a href="/family"><i class="icon-sitemap"></i>
+        <span class="desktop-label">Rajapaksa Family Ties</span>
+        <span class="mobile-label">Family</span>
+      </a></li>
+      <li><a href="http://www.theglobalmail.org/feature/how-not-to-win-a-war/685/" target="_blank"><i class="icon-comments"></i>
+        <span class="desktop-label">Join the conversation</span>
+        <span class="mobile-label">Comments</span>
+      </a></li>
     </ul>
   </div>
 
@@ -115,17 +125,24 @@
       <header class="article-header">
         <h1 class="header">{{{header}}}</h1>
         <h2 class="byline">{{{byline}}}</h2>
-        <h3 class="author">{{{author}}}</h3>
-        {{#if image}}
+        {{#if author}}
+          <h3 class="author">{{{author}}}</h3>
+        {{/if}}
+        {{#unless hideHeaderImage}}
           <div class="image"></div>
           {{#if imageCaption}}
             <div class="paragraph-container">
+              {{#if imageCredit}}
+                <p class="credit">
+                  {{imageCredit}}
+                </p>
+              {{/if}}
               <p>
                 {{imageCaption}}
               </p>
             </div>
           {{/if}}
-        {{/if}}
+        {{/unless}}
       </header>
       <section class="content">{{> body }}</section>
       <section class="next-chapter">{{{next-chapter}}}</section>
