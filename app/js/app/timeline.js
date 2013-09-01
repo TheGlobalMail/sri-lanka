@@ -18,7 +18,7 @@ define([
   };
 
   var init = function() {
-    events.on('loading:complete', function () {
+    events.once('loading:complete', function () {
       if ($('#timeline').length) {
         timelineConfig();
       }

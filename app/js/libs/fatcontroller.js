@@ -11,14 +11,15 @@
     root.fc = factory();
   }
 
-}(this, function fatcontroller() {
+}(this, function() {
 
   // Registry of subscribers
   var registry = {
     // event: [
     //   {
     //     callback: ...,
-    //     context: ...
+    //     context: ...,
+    //     once: ...
     //   },
     //   ...
     // ],
@@ -27,7 +28,8 @@
   var on = function on(event, callback, context) {
     var binding = {
       callback: callback,
-      context: context
+      context: context,
+      once: false
     };
     if (registry[event] === undefined) {
       registry[event] = [];
@@ -36,7 +38,21 @@
     return binding;
   };
 
-  var off = function off(event, callback, context) {
+  var once = function once() {
+    var binding = on.apply(undefined, arguments);
+    binding.once = true;
+    return binding;
+  };
+
+  var off = function off(event) {
+    var callback = undefined;
+    var context = undefined;
+    if (typeof event === 'object') {
+      event = obj.event;
+      callback = obj.callback;
+      context = obj.context;
+    }
+
     if (event && !callback && !context) {
       delete registry[event];
     } else if (callback || context) {
@@ -81,6 +97,12 @@
         } else {
           binding.callback(args);
         }
+        if (binding.once) {
+          subscribers.splice(i, 1);
+        }
+        if (subscribers.length === 0) {
+          delete registry[event];
+        }
       }
     }
     return event;
@@ -88,6 +110,7 @@
 
   return {
     on: on,
+    once: once,
     off: off,
     trigger: trigger,
     registry: registry

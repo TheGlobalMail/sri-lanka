@@ -28,7 +28,7 @@ define([
   };
 
   var setBindings = function() {
-    events.on('loading:complete', function() {
+    events.once('loading:complete', function() {
       $(window).on('scroll', _.throttle(logScrollTracking, 50));
     })
   };

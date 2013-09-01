@@ -1,12 +1,11 @@
 define([
   'jquery',
-  'lodash',
-  'events'
-], function ($, _, events) {
+  'lodash'
+], function ($, _) {
 
   var elementsToWatch = [];
 
-  // Cached globals values
+  // Cached values
   var scrollY;
   var windowHeight;
   var fixedHeaderHeight;
@@ -20,12 +19,12 @@ define([
       element: element,
       bindings: bindings
     };
-    obj = _initElement(obj);
+    obj = initElement(obj);
     elementsToWatch.push(obj);
     return obj;
   };
 
-  var _initElement = function(obj) {
+  var initElement = function(obj) {
     // Calculate the position of an element and cache
     // as many values as possible
 
@@ -33,19 +32,18 @@ define([
     var offset = element.offset();
     offset.bottom = offset.top + element.outerHeight();
     return _.extend(obj, {
-      element: element,
       offset: offset,
       inViewport: false
     });
   };
 
   var reinitialiseElements = function() {
-    _.map(elementsToWatch, _initElement);
+    _.map(elementsToWatch, initElement);
   };
 
   var offsetFromViewport = function(offset) {
     var position = {
-      'in': false,
+      in: false,
       out: false,
       above: false,
       below: false
@@ -63,7 +61,7 @@ define([
     var belowBottom = elementTop >= windowBottom;
 
     if (belowTop && aboveBottom) {
-      position['in'] = true;
+      position.in = true;
     } else {
       position.out = true;
       position.above = aboveTop;
@@ -73,7 +71,7 @@ define([
     return position;
   };
 
-  var _checkElement = function(obj) {
+  var checkElement = function(obj) {
     // Check if an element is within the viewport and trigger
     // events when an element enters or exits.
     var offset = obj.offset;
@@ -103,7 +101,7 @@ define([
   };
 
   var checkElements = function() {
-    _.each(elementsToWatch, _checkElement);
+    _.each(elementsToWatch, checkElement);
   };
 
   var getWindowHeight = function() {

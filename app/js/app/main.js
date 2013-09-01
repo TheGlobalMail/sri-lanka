@@ -33,7 +33,7 @@ define([
 
     var loadingStageComplete = _.after(loadingStateUntil.length, removeLoadingState);
     _.each(loadingStateUntil, function(eventName) {
-      events.on(eventName, loadingStageComplete);
+      events.once(eventName, loadingStageComplete);
     })
   };
 
