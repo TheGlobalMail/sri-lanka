@@ -17,9 +17,9 @@ define([
 
   var scaleToViewport = function() {
     if (article.hasClass('introduction')) {
-      $('.article-header').height(window.innerHeight * 0.7);
+      $('.article-header').height(window.innerHeight * 0.4);
     } else {
-      headerImage.height(window.innerHeight * 0.7);
+      headerImage.height(window.innerHeight * 0.4);
     }
   };
 
